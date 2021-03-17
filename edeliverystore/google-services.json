@@ -1,0 +1,231 @@
+{
+  "project_info": {
+    "project_number": "1057633895779",
+    "firebase_url": "https://yetidelivery-1561199125156.firebaseio.com",
+    "project_id": "yetidelivery-1561199125156",
+    "storage_bucket": "yetidelivery-1561199125156.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057633895779:android:f64407570f704902d4ff56",
+        "android_client_info": {
+          "package_name": "com.waffledelivery.store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057633895779-q2l1q6q2bltu1mut3o0b6cdiqqr4g3n5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.waffledelivery.store",
+            "certificate_hash": "fe82ed1229a7a7a9dd0b06e24d59694e8163a700"
+          }
+        },
+        {
+          "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIJ9V0kSdSwDa2_LbTk-byESWkqPUv9WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1057633895779-4gnss6richva0uj4ot5uo8ttr82ngfv2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.waffledelivery.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057633895779:android:e4deaa7171fcb0a4d4ff56",
+        "android_client_info": {
+          "package_name": "com.waffledelivery.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057633895779-3mlaik7518nfo7ocq9gjefvrb2gbkgb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.waffledelivery.user",
+            "certificate_hash": "fe82ed1229a7a7a9dd0b06e24d59694e8163a700"
+          }
+        },
+        {
+          "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIJ9V0kSdSwDa2_LbTk-byESWkqPUv9WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1057633895779-4gnss6richva0uj4ot5uo8ttr82ngfv2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.waffledelivery.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057633895779:android:15bff3160ad07090d4ff56",
+        "android_client_info": {
+          "package_name": "com.yetidelivery.provider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057633895779-n4dnhtfedf00fpdulj3ock59esn4nkgn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yetidelivery.provider",
+            "certificate_hash": "53d076fffa766ae7ee64022be4308ad17c2b91d1"
+          }
+        },
+        {
+          "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIJ9V0kSdSwDa2_LbTk-byESWkqPUv9WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1057633895779-4gnss6richva0uj4ot5uo8ttr82ngfv2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.waffledelivery.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057633895779:android:a56b714f951aa44bd4ff56",
+        "android_client_info": {
+          "package_name": "com.yetidelivery.store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057633895779-kqa0klergesf9tb96u50ejspm004ebho.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yetidelivery.store",
+            "certificate_hash": "53d076fffa766ae7ee64022be4308ad17c2b91d1"
+          }
+        },
+        {
+          "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIJ9V0kSdSwDa2_LbTk-byESWkqPUv9WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1057633895779-4gnss6richva0uj4ot5uo8ttr82ngfv2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.waffledelivery.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057633895779:android:3a91a4995d632472d4ff56",
+        "android_client_info": {
+          "package_name": "com.yetidelivery.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057633895779-igeglk7iclj32c2nfomdnt7b43gfdg4p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yetidelivery.user",
+            "certificate_hash": "53d076fffa766ae7ee64022be4308ad17c2b91d1"
+          }
+        },
+        {
+          "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIJ9V0kSdSwDa2_LbTk-byESWkqPUv9WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057633895779-141fnc3j0ekv5ctfibsnnb8p1rnesma2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1057633895779-4gnss6richva0uj4ot5uo8ttr82ngfv2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.waffledelivery.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

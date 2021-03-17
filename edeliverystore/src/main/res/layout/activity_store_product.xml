@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    tools:context="com.edelivery.store.StoreOrderProductActivity">
+
+
+    <include layout="@layout/include_toolbar"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvStoreProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:clipToPadding="false"
+            android:paddingBottom="?attr/actionBarSize"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llProductFilter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:clickable="true"
+        android:gravity="bottom|end">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvProductFilter"
+            android:layout_width="250dp"
+            android:layout_height="400dp"
+            android:layout_gravity="top|end"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:background="@color/colorWhite"
+            android:visibility="visible"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+
+                <LinearLayout
+                    android:id="@+id/llDeliveryAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:background="@drawable/selector_round_shape_light_gray_solid"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/activity_horizontal_padding">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_app_edit_text_padding"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_magnifier_tool_small"/>
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etProductSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:ems="10"
+                        android:hint="@string/text_enter_Item_name"
+                        android:imeOptions="actionDone"
+                        android:inputType="textNoSuggestions"
+                        android:maxLines="1"
+                        android:padding="@dimen/dimen_app_edit_text_padding"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/size_app_text_small"/>
+
+                    <ImageView
+                        android:id="@+id/ivClearDeliveryAddressTextMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                        android:padding="@dimen/dimen_app_edit_text_padding"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/cross_grey_icon_tiny"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvFilterList"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/activity_horizontal_padding"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:visibility="visible">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <com.edelivery.store.widgets.CustomButton
+                    android:id="@+id/btnApplyProductFilter"
+                    style="@style/CustomButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_apply"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnGotoCart"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="@string/text_go_to_cart"
+        android:visibility="gone"/>
+</FrameLayout>

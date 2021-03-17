@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:visibility="visible"
+    app:theme="@style/AppTheme">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvDialogAlertTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:text="@string/text_add_card"
+        android:textSize="@dimen/size_app_text_large"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiCardholderName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/CustomTextInputLayout">
+
+
+        <com.edelivery.store.widgets.CustomInputEditText
+            android:id="@+id/etCardHolderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:hint="@string/text_card_holder_name"
+            android:inputType="textCapSentences"
+            android:singleLine="true"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_medium" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.stripe.android.view.CardMultilineWidget
+        android:id="@+id/stripeCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shouldShowPostalCode="false" />
+
+    <CheckBox
+        android:id="@+id/cbSaveCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_save_card"
+        android:textSize="@dimen/size_app_text_medium"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/btnDialogAlertLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/text_cancel"
+            android:textAllCaps="true"
+            android:textSize="@dimen/size_app_label_regular"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/btnDialogAlertRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/text_submit"
+            android:textAllCaps="true"
+            android:textSize="@dimen/size_app_label_regular"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/activity_product"
+                                                     xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:background="@color/color_app_bg"
+                                                     android:fitsSystemWindows="true">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_app_bg"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:scrimAnimationDuration="200"
+            app:scrimVisibleHeightTrigger="84dp"
+            app:titleEnabled="false">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cover_image"
+                android:contentDescription="@string/text_image"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/text_transition_image"
+                app:layout_collapseMode="parallax"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                app:layout_collapseMode="parallax">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="kdfhfhjdhj"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_regular"
+                    android:transitionName="@string/text_transition_text1"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <include layout="@layout/include_toolbar"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_app_bg"
+        app:layout_anchor="@id/appBar"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/general_margin"
+            android:paddingLeft="@dimen/general_margin"
+            android:paddingRight="@dimen/general_margin"
+            android:paddingTop="@dimen/general_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/text_description"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_label_regular"
+                    android:visibility="visible"/>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/general_small_margin"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_small"
+
+                    android:transitionName="@string/text_transition_text2"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/include_switch_layout"/>
+
+            <include layout="@layout/include_divider"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_small_margin"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvSpecificationGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/text_specification_group"
+                    android:textSize="@dimen/size_app_text_medium"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+                <ImageView
+                    android:id="@+id/ivEditSpecification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_image"
+                    android:paddingBottom="@dimen/general_top_margin"
+                    android:paddingLeft="@dimen/general_top_margin"
+                    android:paddingRight="@dimen/general_top_margin"
+                    android:paddingTop="@dimen/general_top_margin"
+                    android:src="@drawable/ic_edit_black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llNewSpecification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvAddSpecification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/general_small_margin"
+                android:paddingTop="@dimen/general_small_margin"
+                android:text="@string/text_add_specification_group"
+                android:textColor="@color/color_app_text"
+                android:textSize="@dimen/size_app_button_text"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcSpecification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

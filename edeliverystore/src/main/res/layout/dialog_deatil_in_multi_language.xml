@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toos="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/txDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_large"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"
+        toos:text="@string/text_item_name" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@color/colorWhite"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomButton
+            android:id="@+id/btnNegative"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_app_button_text"
+            app:typefaceBtn="fonts/AvenirLTStd-Medium.otf" />
+
+        <com.edelivery.store.widgets.CustomButton
+            android:id="@+id/btnPositive"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_save"
+            android:textAllCaps="true"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/size_app_button_text"
+            app:typefaceBtn="fonts/AvenirLTStd-Medium.otf" />
+    </LinearLayout>
+
+</LinearLayout>

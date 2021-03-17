@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_small_margin"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/text_specification"
+            android:textSize="@dimen/size_app_text_small"
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+        <ImageView
+            android:id="@+id/ivEditSpecification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/text_image"
+            android:paddingBottom="@dimen/general_top_margin"
+            android:paddingLeft="@dimen/general_top_margin"
+            android:paddingRight="@dimen/general_top_margin"
+            android:paddingTop="@dimen/general_top_margin"
+            android:src="@drawable/ic_edit_black"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcSpecification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

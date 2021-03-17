@@ -1,0 +1,136 @@
+<resources>
+    <string-array name="profileMenuItem">
+        <item>@string/text_profile</item>
+        <item>@string/text_history</item>
+        <item>@string/text_group_of_category</item>
+        <item>@string/text_product_specification_group</item>
+        <item>@string/text_document</item>
+        <item>@string/text_bank_details</item>
+        <item>@string/text_earning</item>
+        <item>@string/text_payments</item>
+        <item>@string/text_product_menu</item>
+        <item>@string/text_settings</item>
+        <item>@string/text_sub_store</item>
+        <item>@string/text_share</item>
+        <item>@string/text_create_order</item>
+        <item>@string/text_instant_order</item>
+        <item>@string/text_review</item>
+        <item>@string/text_promo</item>
+        <item>@string/text_notification</item>
+        <item>@string/text_help</item>
+        <item>@string/text_log_out</item>
+    </string-array>
+
+    <integer-array name="profileMenuIcon">
+        <item>@drawable/ic_man_user_stroke</item>
+        <item>@drawable/ic_bulleted_list</item>
+        <item>@drawable/ic_category</item>
+        <item>@drawable/ic_products_stroke</item>
+        <item>@drawable/ic_documents_stroke</item>
+        <item>@drawable/ic_bank_building_24dp</item>
+        <item>@drawable/ic_earning_stroke</item>
+        <item>@drawable/ic_payment_stroke</item>
+        <item>@drawable/ic_products_stroke</item>
+        <item>@drawable/ic_settings_stroke</item>
+        <item>@drawable/sub_store_android</item>
+        <item>@drawable/ic_share_stroke</item>
+        <item>@drawable/ic_create_order_stroke</item>
+        <item>@drawable/ic_create_order_without_item_01</item>
+        <item>@drawable/ic_star_black_big</item>
+        <item>@drawable/ic_promo</item>
+        <item>@drawable/noti_android</item>
+        <item>@drawable/ic_help_stroke_01</item>
+        <item>@drawable/ic_logout_stroke</item>
+    </integer-array>
+
+    <!--**********************used for language*********************-->
+
+    <array name="language_code">
+        <item>en</item>
+        <item>ar</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>hi</item>
+    </array>
+    <array name="language_name">
+        <item>English</item>
+        <item>عربى</item>
+        <item>français</item>
+        <item>Española</item>
+        <item>हिन्दी</item>
+    </array>
+
+
+    <!--*****************used for cancellation charge type****************************-->
+
+    <string-array name="cancellation_charge_type">
+        <item>@string/text_percentage</item>
+        <item>@string/text_absolute</item>
+    </string-array>
+    <string-array name="cancellation_charge_type_value">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--****************************used for promo type**********************-->
+
+    <string-array name="promo_type">
+        <item>@string/text_percentage</item>
+        <item>@string/text_absolute</item>
+    </string-array>
+    <string-array name="promo_value">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!--**********************************used for promo*******************************-->
+
+    <string-array name="promo_for_type">
+        <item>@string/text_store</item>
+        <item>@string/text_products</item>
+        <item>@string/text_item</item>
+    </string-array>
+    <string-array name="promo_for_value">
+        <item>2</item>
+        <item>21</item>
+        <item>22</item>
+    </string-array>
+    <!--*************************************used for promo recursion************************-->
+
+    <string-array name="promo_recursion_type">
+        <item>@string/text_no_recursion</item>
+        <item>@string/text_daily</item>
+        <item>@string/text_weekly</item>
+        <item>@string/text_monthly</item>
+        <item>@string/text_annually</item>
+    </string-array>
+    <string-array name="promo_recursion_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+
+    <!--*************************************used for price ratings************************-->
+
+    <string-array name="price_rating">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!--*************************************used for specification range************************-->
+    <string-array name="specification_range">
+        <item>@string/text_select_range</item>
+        <item>@string/text_selected_range_max</item>
+    </string-array>
+
+
+    <string-array name="login_as">
+        <item>@string/text_store</item>
+        <item>@string/text_sub_store</item>
+    </string-array>
+</resources>

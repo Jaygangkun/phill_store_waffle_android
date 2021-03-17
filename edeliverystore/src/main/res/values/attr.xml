@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="typefaceTv" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomInputEditText">
+        <attr name="typefaceInputEt" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomEditText">
+        <attr name="typefaceEt" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomButton">
+        <attr name="typefaceBtn" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ExpandablePanel">
+        <attr name="handle" format="reference"/>
+        <attr name="content" format="reference"/>
+        <attr name="animationDuration" format="integer"/>
+        <attr name="collapsedHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="app">
+        <attr name="customFont" format="string"/>
+        <attr name="posX" format="integer"></attr>
+        <attr name="posY" format="integer"></attr>
+    </declare-styleable>
+    <!--<declare-styleable name="ScrimInsetsView">-->
+    <!--<attr name="insetForeground" format="reference|edit_text_color"/>-->
+    <!--</declare-styleable>-->
+    <declare-styleable name="CustomCircularProgressView">
+        <attr name="cpv_progress" format="float"/>
+        <attr name="cpv_maxProgress" format="float"/>
+        <attr name="cpv_animDuration" format="integer"/>
+        <attr name="cpv_animSwoopDuration" format="integer"/>
+        <attr name="cpv_animSyncDuration" format="integer"/>
+        <attr name="cpv_color" format="color"/>
+        <attr name="cpv_thickness" format="dimension"/>
+        <attr name="cpv_indeterminate" format="boolean"/>
+        <attr name="cpv_animAutostart" format="boolean"/>
+        <attr name="cpv_animSteps" format="integer"/>
+        <attr name="cpv_startAngle" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomView">
+        <attr name="drawableLeftCompat" format="reference"/>
+        <attr name="drawableRightCompat" format="reference"/>
+        <attr name="drawableTopCompat" format="reference"/>
+        <attr name="drawableBottomCompat" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="TagView">
+        <attr name="lineMargin" format="dimension"/>
+        <attr name="tagMargin" format="dimension"/>
+        <attr name="textPaddingLeft" format="dimension"/>
+        <attr name="textPaddingRight" format="dimension"/>
+        <attr name="textPaddingTop" format="dimension"/>
+        <attr name="textPaddingBottom" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MultiLineLayout">
+        <attr name="horizontalSpacing" format="dimension"/>
+        <attr name="verticalSpacing" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="FlowLayout_LayoutParams">
+        <attr name="layout_horizontalSpacing" format="dimension"/>
+        <attr name="layout_breakLine" format="boolean"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    tools:context="com.edelivery.store.DocumentActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvDocument"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_app_bg"
+        android:orientation="vertical">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_padding"
+            android:text="@string/text_mandatory_document"
+            android:textColor="@color/color_app_heading"
+            android:textSize="@dimen/size_app_text_small"/>
+
+        <com.edelivery.store.widgets.CustomButton
+            android:id="@+id/btnDocumentSubmit"
+            style="@style/CustomButton"
+            android:text="@string/text_save"/>
+    </LinearLayout>
+</LinearLayout>

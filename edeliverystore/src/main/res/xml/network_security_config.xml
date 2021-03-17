@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">edeliverydemo.appemporio.net</domain>
+        <domain includeSubdomains="true">edelivery.developer.appemporio.net</domain>
+        <domain includeSubdomains="true">edelivery.appemporio.net</domain>
+        <domain includeSubdomains="true">192.168.0.141:8000</domain>
+        <domain includeSubdomains="true">192.168.0.150:8000</domain>
+        <domain includeSubdomains="true">192.168.0.59:8000</domain>
+        <domain includeSubdomains="true">192.168.0.144</domain>
+        <domain includeSubdomains="true">yetiapp.innovus.vip</domain>
+        <domain includeSubdomains="true">apiedeliverydeveloper.appemporio.net</domain>
+    </domain-config>
+</network-security-config>

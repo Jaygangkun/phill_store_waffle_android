@@ -1,0 +1,125 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.31.2'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+android {
+    compileSdkVersion 28
+    buildToolsVersion '29.0.2'
+    defaultConfig {
+        applicationId "com.waffledelivery.store"
+        minSdkVersion 21
+        targetSdkVersion 28
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resValue "string", "FACEBOOK_APP_ID", "1482336665179472"
+        resValue "string", "FB_LOGIN_PROTOCOL_SCHEME", "fb1482336665179472"
+        resValue "string", "GOOGLE_ANDROID_API_KEY", "AIzaSyCSJ7rZr1THcRYiRaZvl_dDy94i4E1lO8Q"
+        resValue "string", "TWITTER_CONSUMER_KEY", "Tm3zUCWPIpW4hnkiNy31E88aV"
+        resValue "string", "TWITTER_CONSUMER_SECRET", "qo9vvmbuX7Y3nPVaP6RNZOB4gejR9LaKC8mKy0oc44rFXjnXCl"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"https://wafapp.waffleaway.co.uk/"'
+            buildConfigField "String", "IMAGE_URL", '"https://wafapp.waffleaway.co.uk/"'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"https://wafapp.waffleaway.co.uk/"'
+            buildConfigField "String", "IMAGE_URL", '"https://wafapp.waffleaway.co.uk/"'
+        }
+
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'javax.annotation:javax.annotation-api:1.2'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation 'com.google.firebase:firebase-core:17.4.3'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.facebook.android:facebook-android-sdk:4.41.0'
+    implementation 'com.twitter.sdk.android:twitter:3.1.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.stripe:stripe-android:11.0.3'
+    implementation 'com.google.firebase:firebase-database:18.0.1'
+    implementation 'com.google.firebase:firebase-storage:18.1.1'
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+
+    testImplementation 'junit:junit:4.12'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }
+
+    implementation project(':crope')
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+    implementation 'com.jaredrummler:android-device-names:2.0.0'
+    implementation files('libs/btsdk.jar')
+    implementation files('libs/printersdkv22(standard_neutral).jar')
+    implementation files('libs/btsdk.jar')
+
+}
+
+apply plugin: 'com.google.gms.google-services'

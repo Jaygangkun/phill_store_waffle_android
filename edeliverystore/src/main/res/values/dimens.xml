@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="dimen_margin_logo">100dp</dimen>
+    <dimen name="dimen_map_bounce">40dp</dimen>
+    <dimen name="dimen_filter_height">400dp</dimen>
+    <dimen name="dimen_app_tab_elevation">4dp</dimen>
+    <dimen name="dimen_app_toolbar_elevation">6dp</dimen>
+    <dimen name="dimen_expand_penal_content_1">70dp</dimen>
+    <dimen name="dimen_expand_penal_content_2">120dp</dimen>
+    <dimen name="dimen_expand_penal_content_3">180dp</dimen>
+    <dimen name="dimen_app_tab_size">36dp</dimen>
+    <dimen name="splash_logo">155dp</dimen>
+
+    <integer name="dimen_print_text_larger">28</integer>
+    <integer name="dimen_print_text_regular">24</integer>
+    <integer name="dimen_print_text_medium">29</integer>
+    <integer name="dimen_print_divider_size">20</integer>
+    <integer name="dimen_print_divider_size1">22</integer>
+    <integer name="dimen_print_next_line">30</integer>
+    <integer name="dimen_print_text_heading">35</integer>
+    <integer name="dimen_print_text_large">36</integer>
+    <integer name="dimen_print_text_title">66</integer>
+    <integer name="dimen_print_lable_with_bg">40</integer>
+    <integer name="dimen_print_qr_layout_width">230</integer>
+    <integer name="dimen_print_logo_width">180</integer>
+    <integer name="dimen_print_logo_height">90</integer>
+</resources>

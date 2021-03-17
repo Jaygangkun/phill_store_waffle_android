@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_padding"
+        android:layout_marginStart="@dimen/activity_horizontal_padding"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/dimen_app_edit_text_padding"
+        android:paddingStart="@dimen/dimen_app_edit_text_padding">
+
+        <com.edelivery.store.widgets.CustomFontTextViewTitle
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_promo_hve_date"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_regular"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchPromoRecursion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:popupBackground="@color/colorWhite"
+            android:theme="@style/CustomSwitch"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRecursion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:text="@string/text_promo_recursion_type"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_label_small"
+            app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+
+
+        <Spinner
+            android:id="@+id/spinnerPromoRecursionType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:prompt="@string/text_prompt_select">
+        </Spinner>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:background="@drawable/divider"/>
+
+        <LinearLayout
+            android:id="@+id/llPromoDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_weight="1"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etPromoStartDate"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/text_promo_start_date"
+                    android:inputType="number"
+                    android:textAlignment="viewStart"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_weight="1"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etPromoExpDate"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+
+                    android:hint="@string/text_promo_exp_date"
+                    android:inputType="number"
+                    android:textAlignment="viewStart"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPromoTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_weight="1"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etPromoStartTime"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/text_promo_start_time"
+                    android:inputType="number"
+
+                    android:textAlignment="viewStart"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_weight="1"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etPromoEndTime"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/text_promo_end_time"
+                    android:inputType="number"
+
+                    android:textAlignment="viewStart"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvSelectRecursionMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+                    android:layout_weight="1"
+                    android:text="@string/text_monthly_recursion"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_small"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+
+                <ImageView
+                    android:id="@+id/ivAddMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"/>
+            </LinearLayout>
+
+            <com.edelivery.store.component.TagView
+                android:id="@+id/tagGroupMonth"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:layout_weight="1"
+                android:visibility="visible"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/divider"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvSelectRecursionWeek"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+                    android:layout_weight="1"
+                    android:text="@string/text_weekly_recursion"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_small"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+
+                <ImageView
+                    android:id="@+id/ivAddWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"/>
+
+
+            </LinearLayout>
+
+            <com.edelivery.store.component.TagView
+                android:id="@+id/tagGroupWeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:visibility="visible"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/divider"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvSelectRecursionDay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+                    android:layout_weight="1"
+                    android:text="@string/text_daily_recursion"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_small"
+                    app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+
+                <ImageView
+                    android:id="@+id/ivAddDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp"/>
+            </LinearLayout>
+
+            <com.edelivery.store.component.TagView
+                android:id="@+id/tagGroupDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:visibility="visible"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/divider"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

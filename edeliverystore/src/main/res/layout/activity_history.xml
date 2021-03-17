@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical"
+              tools:context="com.edelivery.store.HistoryActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_history"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:focusable="false">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutHistoryFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/general_margin">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_calendar"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tvFromDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:background="@drawable/select_round_shape_gray_solid"
+                        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                        android:paddingEnd="@dimen/activity_horizontal_padding"
+                        android:paddingStart="@dimen/activity_horizontal_padding"
+                        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+                        android:text="@string/text_from"
+                        android:textColor="@color/color_app_text"
+                        android:textSize="@dimen/size_app_text_small"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/general_margin">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_calendar"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tvToDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:background="@drawable/select_round_shape_gray_solid"
+                        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                        android:paddingEnd="@dimen/activity_horizontal_padding"
+                        android:paddingStart="@dimen/activity_horizontal_padding"
+                        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+                        android:text="@string/text_to"
+                        android:textColor="@color/color_app_text"
+                        android:textSize="@dimen/size_app_text_small"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvHistoryReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/general_medium_margin"
+                    android:text="@string/text_reset"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_text_regular"/>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvHistoryApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/general_medium_margin"
+                    android:text="@string/text_apply"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_text_regular"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/below_shadow">
+            </View>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

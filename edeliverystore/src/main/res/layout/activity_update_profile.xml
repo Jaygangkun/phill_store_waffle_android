@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="@dimen/dimen_app_profile_image"
+                    android:layout_height="@dimen/dimen_app_profile_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/man_user"
+                    android:visibility="visible"
+                    app:riv_corner_radius="360dip"
+                    app:riv_oval="true"/>
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="@dimen/dimen_app_profile_image"
+                    android:layout_height="@dimen/dimen_app_profile_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/selector_white_shape"
+                    android:visibility="visible"
+                    app:riv_corner_radius="360dip"
+                    app:riv_oval="true"/>
+
+                <FrameLayout
+                    android:id="@+id/ivProfileImageSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/circel_white"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_photo_camera"/>
+                </FrameLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/general_medium_margin"
+                android:paddingEnd="@dimen/general_margin"
+                android:paddingStart="@dimen/general_margin">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etName"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_name"
+                        android:focusableInTouchMode="false"
+                        android:inputType="textCapSentences"
+                        android:textAlignment="viewStart"
+                        app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etEmail"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_email"
+                        android:inputType="textEmailAddress"
+                        android:textAlignment="viewStart"
+                        app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:paddingStart="@dimen/dimen_app_edit_text_padding"
+                    android:text="@string/text_mobile_no"
+                    android:textSize="@dimen/size_app_label_small"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_padding"
+                    android:baselineAligned="true"
+                    android:orientation="horizontal">
+
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tvCountryCode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:gravity="center"
+                        android:hint="@string/text_code"
+                        android:textColor="@color/color_app_text"
+                        android:textSize="@dimen/size_app_text_regular"
+                        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etMobileNo"
+                        style="@style/CustomEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:background="@null"
+                        android:digits="0123456789"
+                        android:hint="@string/text_number"
+                        android:inputType="phone"
+
+                        android:textAlignment="viewStart"
+                        app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                </LinearLayout>
+
+                <include layout="@layout/include_divider_register"/>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/general_medium_margin"
+                    android:gravity="start"
+                    android:padding="@dimen/dimen_app_edit_text_padding"
+                    android:text="@string/text_change_password"
+                    android:textColor="@color/color_app_link"
+                    android:textSize="@dimen/size_app_text_small"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+                <LinearLayout
+                    android:id="@+id/llChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/general_top_margin"
+                        android:theme="@style/CustomTextInputLayout">
+
+                        <com.edelivery.store.widgets.CustomInputEditText
+                            android:id="@+id/etNewPassword"
+                            style="@style/CustomEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/text_new_password"
+                            android:inputType="textPassword"
+
+                            android:textAlignment="viewStart"
+                            app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/general_top_margin"
+                        android:theme="@style/CustomTextInputLayout">
+
+                        <com.edelivery.store.widgets.CustomInputEditText
+                            android:id="@+id/etConfirmNewPassword"
+                            style="@style/CustomEditText"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:hint="@string/text_new_confirm_password"
+                            android:inputType="textPassword"
+                            android:textAlignment="viewStart"
+                            app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

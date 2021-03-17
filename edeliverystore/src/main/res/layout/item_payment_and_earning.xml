@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="horizontal">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvOderNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_order"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvPayBy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_payment_by"
+        android:visibility="gone"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_total"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvServiceFees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_service_fees"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvOrderFees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_service_fees"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvProfit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_profile"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvPaidShare"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_paid_order"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvPaidOrder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_cash"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvEarn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_Earn"
+        android:textColor="@color/color_app_text"
+        android:textSize="10sp"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+</LinearLayout>

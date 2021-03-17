@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvInvoice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_horizontal_padding"
+                android:paddingTop="@dimen/activity_horizontal_padding">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_total"
+                    android:textSize="@dimen/size_app_label_regular"/>
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvInvoiceOderTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_padding"
+                    android:text="@string/text_empty_string"
+                    android:textSize="@dimen/size_app_text_largest"/>
+            </LinearLayout>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvReopenAt"
+                style="@style/CustomTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/activity_horizontal_padding"
+                android:text="@string/text_empty_string"
+                android:textColor="@color/color_app_heading"
+                android:textSize="@dimen/size_app_text_regular"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnPlaceOrder"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_place_order"
+        android:visibility="visible"/>
+</LinearLayout>
+

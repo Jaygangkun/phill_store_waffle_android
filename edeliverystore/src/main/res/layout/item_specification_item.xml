@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+              android:paddingEnd="@dimen/activity_horizontal_margin"
+              android:paddingStart="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+
+    <com.edelivery.store.component.CustomFontRadioButton
+        android:id="@+id/rbSingleSpecification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/dimen_app_edit_text_padding"
+        android:textColor="@color/color_app_label"
+        android:theme="@style/RadioButtonStyle2"
+        android:visibility="gone"/>
+
+    <com.edelivery.store.component.CustomFontCheckBox
+        android:id="@+id/rbMultipleSpecification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_app_label"
+        android:theme="@style/RadioButtonStyle2"
+        android:visibility="gone"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvSpecificationItemDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_padding"
+        android:layout_weight="1"
+        android:maxLines="2"
+        android:text="PRICE"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_app_label"
+        android:textSize="@dimen/size_app_label_regular"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvSpecificationItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRICE"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_app_label"
+        android:textSize="@dimen/size_app_label_regular"/>
+</LinearLayout>

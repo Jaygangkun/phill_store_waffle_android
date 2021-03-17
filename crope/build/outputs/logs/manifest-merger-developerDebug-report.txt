@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml:1:1-51
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml:1:1-51
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml:1:1-51
+	package
+		ADDED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml:1:11-48
+		INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+		INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml:1:1-51
+uses-sdk
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+		ADDED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+		INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+		ADDED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml
+		INJECTED from D:\Elluminati\Yeti\Yeti_Store\crope\src\main\AndroidManifest.xml

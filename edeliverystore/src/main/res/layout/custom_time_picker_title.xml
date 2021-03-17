@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvTimePickerOpeningTime"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="@dimen/size_app_text_medium"
+        android:textColor="@color/color_app_text"
+        android:padding="@dimen/general_top_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvTimePickerTitle"
+        android:text="abc"
+        android:gravity="center"
+        android:textSize="@dimen/size_app_text_medium"
+        android:textColor="@color/color_app_text"
+        android:paddingTop="0dp"
+        android:padding="@dimen/general_top_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

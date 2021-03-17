@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/llProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvActive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/switchActivePromo"
+                android:text="@string/text_is_active"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchActivePromo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/cardview_default_elevation"
+                android:gravity="start"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvPromoCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="PROMO200"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/size_app_text_medium"/>
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvPromoPricing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:text="$88.8"
+                    android:textAlignment="viewStart"
+                    />
+            </LinearLayout>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvPromoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+                android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="A promotion code, also know as a coupon code, is a code that is associated with a marketing discount."
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_text_small"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etPromoStartDate"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/text_start_date"
+                        android:inputType="textCapSentences"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/size_app_label_small"
+                        app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etPromoExpDate"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/text_exp_date"
+                        android:inputType="textCapSentences"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/size_app_label_small"
+                        app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

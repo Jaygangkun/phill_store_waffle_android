@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/divProductSpecification"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@color/color_app_divider"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_padding"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:background="@color/color_app_header_bg"
+        android:paddingBottom="@dimen/activity_horizontal_padding"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_padding">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvSpecificationName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="@string/text_name"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvChooseUpTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="(choose up to 3)"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_text_small"/>
+        </LinearLayout>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvRequired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/cpv_default_thickness"
+            android:text="@string/text_is_required"
+            android:textColor="@color/color_app_heading"
+            android:textSize="@dimen/size_app_label_regular"
+            android:visibility="visible"/>
+    </LinearLayout>
+</LinearLayout>

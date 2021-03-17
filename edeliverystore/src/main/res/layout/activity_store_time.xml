@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.edelivery.store.StoreTimeActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            android:background="@color/colorWhite"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/activity_horizontal_padding"
+            android:paddingStart="@dimen/activity_horizontal_padding">
+
+            <com.edelivery.store.widgets.CustomTextView
+                style="@style/CustomTextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/dimen_app_edit_text_padding"
+                android:text="@string/text_open_for_24_hrs"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchStore24HrsOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_app_edit_text_padding"
+                android:theme="@style/CustomSwitch"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/activity_horizontal_padding"
+            android:paddingStart="@dimen/activity_horizontal_padding">
+
+            <com.edelivery.store.widgets.CustomTextView
+                style="@style/CustomTextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/dimen_app_edit_text_padding"
+                android:text="@string/text_store_open"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchStoreOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_app_edit_text_padding"
+                android:theme="@style/CustomSwitch"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStoreTime"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingEnd="@dimen/activity_horizontal_padding"
+            android:paddingStart="@dimen/activity_horizontal_padding"/>
+
+        <LinearLayout
+            android:id="@+id/llSelectTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/activity_horizontal_padding">
+
+            <com.edelivery.store.widgets.CustomInputEditText
+                android:id="@+id/etStartTime"
+                style="@style/CustomEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/text_open_time"/>
+
+            <com.edelivery.store.widgets.CustomInputEditText
+                android:id="@+id/etEndTime"
+                style="@style/CustomEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/text_closed_time"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnAddTime"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_add_time"/>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tv_tag_item_contain"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_round_shape_black"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:textColor="@color/colorWhite"
+        android:singleLine="true"
+        android:textSize="@dimen/size_app_text_small"
+        android:text="Monday"
+        android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+        app:drawableLeftCompat="@drawable/ic_cross_white_18dp"/>
+
+</LinearLayout>

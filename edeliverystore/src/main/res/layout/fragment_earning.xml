@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvOrderDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            android:padding="@dimen/activity_horizontal_padding"
+            android:text="@string/text_empty_string"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_medium"
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+        <include layout="@layout/layout_empty_item"/>
+
+        <LinearLayout
+            android:id="@+id/llData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvOrderTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:padding="@dimen/activity_horizontal_padding"
+                android:text="@string/text_default"
+                android:textColor="@color/color_app_heading"
+                android:textSize="@dimen/size_app_text_large"
+                app:typefaceTv="fonts/AvenirLTStd-Black.otf"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvDayEarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_padding"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:paddingBottom="@dimen/activity_horizontal_padding"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:text="@string/text_daily_earning"
+                android:textAllCaps="true"
+                android:textSize="@dimen/size_app_text_regular"
+                android:visibility="gone"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvOrderEarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/text_pay_to_store"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color_app_heading"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:typefaceTv="fonts/AvenirLTStd-Black.otf"/>
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_app_heading"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:typefaceTv="fonts/AvenirLTStd-Black.otf"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/viewDive"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#A4A4A4"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvProviderAnalytic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvOrdersTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_padding"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:paddingBottom="@dimen/activity_horizontal_padding"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:text="@string/text_orders"
+                android:textAllCaps="true"
+                android:textColor="@color/color_app_text"
+                android:textSize="@dimen/size_app_text_medium"
+                app:typefaceTv="fonts/AvenirLTStd-Black.otf"/>
+
+
+            <include layout="@layout/layout_earning"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

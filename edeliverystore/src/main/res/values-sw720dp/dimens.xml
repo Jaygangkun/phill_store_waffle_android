@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <dimen name="size_app_text_regular">14sp</dimen>
+    <dimen name="size_app_text_medium">15sp</dimen>
+    <dimen name="size_app_text_small">11sp</dimen>
+    <dimen name="size_app_text_large">21sp</dimen>
+    <dimen name="size_app_text_largest">26sp</dimen>
+    <dimen name="size_app_label_regular">13sp</dimen>
+    <dimen name="size_app_label_small">10sp</dimen>
+    <dimen name="size_app_text_cart">10sp</dimen>
+    <dimen name="size_app_button_text">14sp</dimen>
+
+    <dimen name="line_spacing">4dp</dimen>
+
+    <dimen name="general_top_margin">10dp</dimen>
+    <dimen name="general_medium_margin">15dp</dimen>
+    <dimen name="general_margin">16dp</dimen>
+    <dimen name="general_large_margin">30dp</dimen>
+    <dimen name="btn_height">55dp</dimen>
+    <dimen name="general_small_margin">7dp</dimen>
+    <dimen name="img_size">100dp</dimen>
+    <dimen name="type_image_size">60dp</dimen>
+    <dimen name="cover_image">290dp</dimen>
+    <dimen name="bottom_margin_floatingBtn">80dp</dimen>
+    <dimen name="activity_horizontal_padding">10dp</dimen>
+    <dimen name="dimen_app_edit_text_padding">5dp</dimen>
+    <dimen name="dimen_app_progress_bar">30dp</dimen>
+    <dimen name="vehicle_pin_width">19.33dp</dimen>
+    <dimen name="vehicle_pin_height">42.33dp</dimen>
+    <dimen name="size_logo">100dp</dimen>
+    <dimen name="dimen_cart_count">14dp</dimen>
+
+    <dimen name="dimen_app_tab_elevation">4dp</dimen>
+    <dimen name="dimen_app_toolbar_elevation">6dp</dimen>
+</resources>

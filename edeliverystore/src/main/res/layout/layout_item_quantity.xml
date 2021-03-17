@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_round_shape_black_stroke"
+    android:orientation="horizontal"
+    android:visibility="visible">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/btnDecrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_minus"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_app_label_regular"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:text="1"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/btnIncrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_plus"/>
+</LinearLayout>

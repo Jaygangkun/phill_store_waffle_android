@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingStart="@dimen/activity_horizontal_padding"
+    android:paddingEnd="@dimen/activity_horizontal_padding"
+    android:paddingTop="@dimen/activity_horizontal_padding"
+    android:id="@+id/llProduct">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:textColor="@color/color_app_text"
+        android:id="@+id/tvProductName"
+        android:textSize="@dimen/size_app_text_regular"/>
+
+    <com.edelivery.store.component.CustomFontCheckBox
+        android:id="@+id/cbProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cross"
+        android:layout_marginStart="@dimen/activity_horizontal_padding"
+        android:focusableInTouchMode="false"
+        android:visibility="visible"/>
+    </LinearLayout>
+
+    <include layout="@layout/layout_divider_horizontal"/>
+
+
+</LinearLayout>

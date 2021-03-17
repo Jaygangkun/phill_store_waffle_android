@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/ivProvider"
+        android:layout_width="@dimen/btn_height"
+        android:layout_height="@dimen/btn_height"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:id="@+id/tvProviderName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="Provider"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_medium"
+        app:layout_constraintBottom_toTopOf="@id/tvProviderNumber"
+        app:layout_constraintEnd_toStartOf="@id/cbProvider"
+        app:layout_constraintStart_toEndOf="@id/ivProvider"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvProviderNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="+919876543210"
+        android:textColor="@color/color_app_label"
+        android:textSize="@dimen/size_app_text_small"
+        app:layout_constraintBottom_toTopOf="@id/div"
+        app:layout_constraintEnd_toEndOf="@id/tvProviderName"
+        app:layout_constraintStart_toStartOf="@id/tvProviderName"
+        app:layout_constraintTop_toBottomOf="@id/tvProviderName"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+    <com.edelivery.store.component.CustomFontCheckBox
+        android:id="@+id/cbProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:textColor="@color/color_app_label"
+        android:textSize="@dimen/size_app_text_medium"
+        android:theme="@style/RadioButtonStyle2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/div"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_app_divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

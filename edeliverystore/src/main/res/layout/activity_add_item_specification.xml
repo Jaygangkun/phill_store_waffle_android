@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/general_margin">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etSpeciName"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:focusableInTouchMode="false"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_item_specification_name"
+                    android:inputType="textCapSentences"
+                    android:textAlignment="viewStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_medium_margin"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinnerSpecificationRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:popupBackground="@color/colorWhite"
+                    android:prompt="@string/text_prompt_select">
+                </Spinner>
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etStartRange"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:digits="0123456789"
+                    android:hint="@string/text_start_range"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAlignment="viewStart"/>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+                    android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                    android:text="@string/text_to"/>
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etEndRange"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:digits="0123456789"
+                    android:hint="@string/text_end_range"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAlignment="viewStart"/>
+            </LinearLayout>
+
+
+            <include layout="@layout/include_divider"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_medium_margin"
+                android:text="@string/text_required"
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_text_small"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchRequired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                app:theme="@style/CustomSwitch"/>
+
+            <include layout="@layout/include_divider"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/general_medium_margin"
+                android:text="@string/text_add_specification"
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_text_small"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcProSpecification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/general_medium_margin"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnSaveItemSpeci"
+        style="@style/CustomButton"
+        android:text="@string/text_save"/>
+
+
+</LinearLayout>

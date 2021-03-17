@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_large_margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/general_top_margin">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivProductLogo"
+            android:layout_width="@dimen/img_size"
+            android:layout_height="@dimen/img_size"
+            android:contentDescription="@string/text_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            android:transitionName="@string/text_transition_image"
+            app:riv_corner_radius="3dp"
+            app:riv_mutate_background="true"
+            app:riv_oval="false" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutProName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etGroupName"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/text_group_title"
+                    android:inputType="textCapSentences"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/size_app_text_medium"
+                    android:transitionName="@string/text_transition_text1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etGroupSequenceNumber"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:hint="@string/text_sequence_number"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/size_app_text_medium"
+                    android:transitionName="@string/text_transition_text1" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:id="@+id/txDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/general_margin"
+        android:layout_marginTop="20dp"
+        android:paddingStart="@dimen/activity_horizontal_padding"
+        android:paddingBottom="@dimen/activity_horizontal_padding"
+        android:text="@string/text_subcategories"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_medium" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/general_margin"
+        android:paddingRight="@dimen/general_margin">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutProGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:theme="@style/CustomTextInputLayout"
+                android:visibility="gone">
+
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etGroupProducts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/text_select_products"
+                    android:inputType="textMultiLine"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_regular"
+                    android:transitionName="@string/text_transition_text1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnSave"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_save"
+        android:visibility="visible" />
+
+</LinearLayout>

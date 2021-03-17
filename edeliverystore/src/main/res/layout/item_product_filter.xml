@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+              android:paddingEnd="@dimen/activity_horizontal_margin"
+              android:paddingStart="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvProductNameFilter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="2"
+        android:text="@string/text_empty_string"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_small"/>
+
+    <CheckBox
+        android:id="@+id/rbSelectProductFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/CustomCheckbox"
+        android:textColor="@color/color_app_label"
+        android:visibility="visible"/>
+</LinearLayout>

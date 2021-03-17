@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    tools:context="com.edelivery.store.WalletDetailActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wallet_graphics"/>
+
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvAmountTag"
+        style="@style/CustomTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:text="@string/text_requested_amount"
+        android:textColor="@color/color_app_label"
+        android:textSize="@dimen/size_app_label_regular"/>
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:id="@+id/tvWalletRequestAmount"
+        style="@style/CustomTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_empty_string"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_large"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/color_app_text"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvWithdrawalID"
+            style="@style/CustomTextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="ID 1234"
+            android:textAlignment="center"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_label_regular"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/color_app_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:orientation="horizontal">
+
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvTransactionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+            android:gravity="start"
+            android:text="@string/text_empty_string"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_small"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvTransactionTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/text_empty_string"
+            android:textAlignment="viewStart"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_small"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <com.edelivery.store.widgets.CustomTextView
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_approved_by_admin"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_label_regular"/>
+
+        <com.edelivery.store.widgets.CustomFontTextViewTitle
+            android:id="@+id/tvApproveByAdmin"
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/text_empty_string"
+
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_medium"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:text="@string/text_total_wallet_amount"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_label_regular"/>
+
+        <com.edelivery.store.widgets.CustomFontTextViewTitle
+            android:id="@+id/tvTotalWalletAmount"
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/text_empty_string"
+
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_medium"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:text="@string/text_mode_of_transactions"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_label_regular"/>
+
+        <com.edelivery.store.widgets.CustomFontTextViewTitle
+            android:id="@+id/tvMode"
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/text_empty_string"
+            android:gravity="center"
+            android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_medium"/>
+    </LinearLayout>
+</LinearLayout>

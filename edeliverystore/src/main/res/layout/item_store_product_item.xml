@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/activity_horizontal_margin"
+              android:layout_marginRight="@dimen/activity_horizontal_margin"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/llProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_app_bg"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/activity_horizontal_padding"
+        android:paddingTop="@dimen/activity_horizontal_padding">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="Item Name"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvProductDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_padding"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="description"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_text_small"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvProductPricing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="$88.8"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"
+                />
+        </LinearLayout>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="@dimen/img_size"
+            android:layout_height="@dimen/img_size"
+            android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            android:visibility="gone"
+            app:riv_corner_radius="10dp"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/viewDivProductItem"
+        layout="@layout/layout_divider_horizontal"/>
+
+</LinearLayout>

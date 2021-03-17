@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etDeliveryPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ems="10"
+                    android:hint="@string/text_enter_delivery_price"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="numberDecimal"
+                    android:minLines="1"
+                    android:textAlignment="viewStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etCustomerDeliveryAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/text_description"
+                        android:ems="10"
+                        android:focusableInTouchMode="false"
+                        android:hint="@string/text_delivery_address"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:minLines="2"
+                        android:textAlignment="viewStart"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/ivDeliveryLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_padding"
+                    app:srcCompat="@drawable/ic_location_on_black_24dp"/>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etCustomerFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ems="10"
+                    android:hint="@string/text_customer_first_name"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="textPersonName"
+                    android:minLines="1"
+                    android:textAlignment="viewStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etCustomerLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ems="10"
+                    android:hint="@string/text_customer_last_name"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="textPersonName"
+                    android:minLines="1"
+                    android:textAlignment="viewStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etCustomerEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ems="10"
+                    android:hint="@string/text_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:minLines="1"
+                    android:textAlignment="viewStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:paddingStart="3dp"
+                android:text="@string/text_mobile_no"
+                android:textAlignment="viewStart"
+
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_label_small"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_horizontal_padding"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etCustomerCountryCode"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:contentDescription="@string/text_description"
+                    android:ems="10"
+                    android:hint="@string/text_code"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:textAlignment="viewStart"/>
+
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etCustomerMobile"
+                    style="@style/CustomEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:hint="@string/text_number"
+
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:textAlignment="viewStart"/>
+
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout"
+                >
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etDeliveryAddressNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ems="10"
+                    android:hint="@string/text_delivery_note"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:minLines="1"
+
+                    android:textAlignment="viewStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etPromoCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/text_promo_code"
+                        android:imeOptions="actionDone"
+                        android:minLines="1"
+                        android:singleLine="true"
+
+                        android:textAlignment="viewStart"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvPromoCodeApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/activity_horizontal_padding"
+                    android:paddingLeft="@dimen/dimen_app_edit_text_padding"
+                    android:paddingRight="@dimen/dimen_app_edit_text_padding"
+                    android:paddingTop="@dimen/activity_horizontal_padding"
+                    android:text="@string/text_apply"
+                    android:textSize="@dimen/size_app_text_small"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnInvoice"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_invoice"
+        android:visibility="visible"/>
+</LinearLayout>
+

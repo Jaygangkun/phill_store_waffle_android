@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_divider_horizontal"/>
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:id="@+id/tvEarningHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:paddingBottom="@dimen/activity_horizontal_padding"
+        android:paddingEnd="@dimen/activity_horizontal_padding"
+        android:paddingStart="@dimen/activity_horizontal_padding"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:text="Earning"
+        android:textAllCaps="true"
+        android:textSize="@dimen/size_app_text_medium"
+        android:textColor="@color/color_app_text"
+        app:typefaceTv="fonts/AvenirLTStd-Black.otf"/>
+
+</LinearLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_payment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    tools:context="com.edelivery.store.WithdrawalActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvSelectMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@drawable/background_item_section"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_select_withdrawal_method_tag"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_app_label_regular"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_padding"
+        android:layout_marginStart="@dimen/activity_horizontal_padding"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+
+            android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+            android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_01"
+                android:textColor="@color/color_app_heading"
+                android:textSize="@dimen/size_app_text_medium"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:text="@string/text_how_would_you_like_to_request"
+                android:textSize="@dimen/size_app_text_medium"/>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbBankAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:text="@string/text_transfer_to_bank_account"
+                android:textSize="@dimen/size_app_text_regular"
+                android:theme="@style/RadioButtonStyle2"/>
+
+            <RadioButton
+                android:id="@+id/rbCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:text="@string/text_request_a_cash"
+                android:textSize="@dimen/size_app_text_regular"
+                android:theme="@style/RadioButtonStyle2"/>
+
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+            android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_02"
+                android:textColor="@color/color_app_heading"
+                android:textSize="@dimen/size_app_text_medium"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:text="@string/text_enter_amount_to_want_withdraw"
+                android:textSize="@dimen/size_app_text_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:src="@drawable/ic_give_money"/>
+
+            <com.edelivery.store.widgets.CustomInputEditText
+                android:id="@+id/etAmount"
+                style="@style/CustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:hint="@string/text_amount"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textSize="@dimen/size_app_text_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+
+            android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+            android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+            <com.edelivery.store.widgets.CustomTextView
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_03"
+                android:textColor="@color/color_app_heading"
+                android:textSize="@dimen/size_app_text_medium"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:text="@string/text_description_c"
+                android:textSize="@dimen/size_app_text_medium"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:src="@drawable/ic_withdraw_of_a_safe_box"/>
+
+            <com.edelivery.store.widgets.CustomInputEditText
+                android:id="@+id/etDescription"
+                style="@style/CustomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:hint="@string/text_description"
+                android:singleLine="true"
+                android:textSize="@dimen/size_app_text_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSelectBank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_04"
+                    android:textColor="@color/color_app_heading"
+                    android:textSize="@dimen/size_app_text_medium"/>
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:text="@string/text_bank_account"
+                    android:textSize="@dimen/size_app_text_medium"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/activity_horizontal_padding"
+                    android:paddingStart="@dimen/activity_horizontal_padding"
+                    android:src="@drawable/ic_bank_building_24dp"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/spinnerBank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:textSize="@dimen/size_app_text_regular"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tvAddBankAccount"
+                        style="@style/CustomTextViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_add"
+                        android:visibility="gone"/>
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnWithdrawal"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_request_withdrawal"/>
+
+
+</LinearLayout>

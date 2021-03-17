@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical"
+              tools:context="com.edelivery.store.HistoryDetailActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/historyTabsLayout"
+        style="@style/CustomTabStyle2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_app_tab_size"
+        android:elevation="@dimen/dimen_app_tab_elevation"
+        app:tabTextColor="@color/color_app_divider"
+        android:theme="@style/BottomNavigationBar"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/historyViewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+</LinearLayout>

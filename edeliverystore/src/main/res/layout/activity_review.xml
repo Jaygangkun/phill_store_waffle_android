@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    tools:context="com.edelivery.store.ReviewActivity">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/activity_horizontal_padding"
+        android:paddingTop="@dimen/activity_horizontal_padding">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvReviewAverage"
+                style="@style/CustomTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_bg_rating"
+                android:gravity="center"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.0"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_app_text_largest"/>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:numStars="5"
+                android:theme="@style/RatingBar"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:background="@color/color_app_divider"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_padding"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                    android:text="5"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:drawableRightCompat="@drawable/ic_feedback_star_01"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/bar5Star"
+                        style="@style/CustomProgressBarHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tv5StarCount"
+                        style="@style/CustomTextBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/color_app_label"
+                        android:textSize="@dimen/size_app_text_regular"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                    android:text="4"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:drawableRightCompat="@drawable/ic_feedback_star_01"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/bar4Star"
+                        style="@style/CustomProgressBarHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tv4StarCount"
+                        style="@style/CustomTextBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/color_app_label"
+                        android:textSize="@dimen/size_app_text_regular"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                    android:text="3"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:drawableRightCompat="@drawable/ic_feedback_star_01"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/bar3Star"
+                        style="@style/CustomProgressBarHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tv3StarCount"
+                        style="@style/CustomTextBlack"
+                        android:layout_width="0dp"
+                        android:textColor="@color/color_app_label"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="@dimen/size_app_text_regular"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                    android:text="2"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:drawableRightCompat="@drawable/ic_feedback_star_01"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/bar2Star"
+                        style="@style/CustomProgressBarHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tv2StarCount"
+                        style="@style/CustomTextBlack"
+                        android:layout_width="0dp"
+                        android:textColor="@color/color_app_label"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="@dimen/size_app_text_regular"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    style="@style/CustomTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                    android:text="1"
+                    android:textSize="@dimen/size_app_text_regular"
+                    app:drawableRightCompat="@drawable/ic_feedback_star_01"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:layout_marginStart="@dimen/activity_horizontal_padding"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/bar1Star"
+                        style="@style/CustomProgressBarHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"/>
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tv1StarCount"
+                        style="@style/CustomTextBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_horizontal_padding"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:textColor="@color/color_app_label"
+                        android:text="0"
+                        android:textSize="@dimen/size_app_text_regular"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvPublicReview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>

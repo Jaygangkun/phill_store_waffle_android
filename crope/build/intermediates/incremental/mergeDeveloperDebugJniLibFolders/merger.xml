@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Elluminati\Yeti\Yeti_Store\crope\src\main\jniLibs"/></dataSet><dataSet config="developerDebug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Elluminati\Yeti\Yeti_Store\crope\src\developerDebug\jniLibs"/></dataSet></merger>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutroot_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/dimen_app_edit_text_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_app_bg"
+        android:orientation="horizontal">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivClient"
+            android:layout_width="@dimen/btn_height"
+            android:layout_height="@dimen/btn_height"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            app:riv_oval="true" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvClientName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="--"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_medium"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvTotalItemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_medium"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dimen_app_edit_text_padding"
+                android:paddingBottom="@dimen/dimen_app_edit_text_padding">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_order_no"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_small"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvOrderNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="123456"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_small"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+
+                <ImageView
+                    android:id="@+id/ivOrderDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_padding"
+                    android:src="@drawable/ic_shopping_bag_black"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/ivPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_image"
+                    android:src="@drawable/ic_credit_card_2" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+        android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvDeliveryAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:text="@string/text_empty_string"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_text_small"
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+        <ImageView
+            android:id="@+id/ivCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/text_image"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/dimen_app_edit_text_padding"
+            android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+            android:src="@drawable/ic_call_01" />
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:id="@+id/tvOrderSchedule"
+        style="@style/CustomTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_empty_string"
+        android:textColor="@color/color_app_link"
+        android:textSize="@dimen/size_app_text_small"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+            android:layout_weight="1"
+            android:text="@string/text_empty_string"
+            android:textColor="@color/color_app_heading_trans"
+            android:textSize="@dimen/size_app_text_small"
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+        <ImageView
+            android:id="@+id/ivScooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/scooter_icon"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_app_edit_text_padding"
+            android:paddingBottom="@dimen/dimen_app_edit_text_padding">
+
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/btnEditOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:background="@drawable/background_reassign_btn"
+                android:drawablePadding="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:paddingTop="@dimen/dimen_app_edit_text_padding"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                android:text="@string/text_edit"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_app_label_small"
+                android:visibility="gone"
+                app:drawableLeftCompat="@drawable/ic_edit_white_14dp"
+                app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/btnReassign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:background="@drawable/background_reassign_btn"
+                android:drawablePadding="@dimen/activity_horizontal_padding"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/activity_horizontal_padding"
+                android:paddingTop="@dimen/dimen_app_edit_text_padding"
+                android:paddingEnd="@dimen/activity_horizontal_padding"
+                android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                android:text="@string/text_reassign"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_app_label_small"
+                android:visibility="gone"
+                app:drawableLeftCompat="@drawable/ic_reply_black_24dp"
+                app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/btnCancelRequest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:background="@drawable/background_reassign_btn"
+                android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dimen_app_edit_text_padding"
+                android:text="@string/text_cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_app_label_small"
+                android:visibility="gone"
+                app:drawableLeftCompat="@drawable/ic_close_black_24dp"
+                app:typefaceTv="fonts/AvenirLTStd-Medium.otf" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

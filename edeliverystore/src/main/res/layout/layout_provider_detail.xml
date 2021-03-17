@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/llDriverDetail"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_app_bg"
+                android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/dimen_app_edit_text_padding"
+                android:visibility="visible">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/ivProviderImage"
+        android:layout_width="@dimen/type_image_size"
+        android:layout_height="@dimen/type_image_size"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="@dimen/activity_horizontal_padding"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
+        android:visibility="visible"
+        app:riv_corner_radius="360dip"
+        app:riv_oval="true"/>
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:id="@+id/tvProviderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+        android:layout_toEndOf="@+id/ivProviderImage"
+        android:gravity="start"
+        android:text="@string/text_default"
+        android:textAlignment="viewStart"
+
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_medium"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <ImageView
+        android:id="@+id/ivCallProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:src="@drawable/ic_telephone_handle_silhouette"/>
+
+    <LinearLayout
+        android:id="@+id/llRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvProviderName"
+        android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+        android:layout_toEndOf="@id/ivProviderImage"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_red_24dp"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+            android:gravity="start"
+            android:text="@string/text_default"
+            android:textAlignment="viewStart"
+
+            android:textColor="@color/color_app_heading"
+            android:textSize="@dimen/size_app_label_regular"
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/btnGetCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/ivCallProvider"
+        android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+        android:background="@drawable/background_black_btn"
+        android:gravity="start"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_get_code"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_app_text_small"
+        android:visibility="gone"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvPickupCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/ivCallProvider"
+        android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+        android:gravity="start"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:text="Pickup Code : 124563"
+        android:textAllCaps="false"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_small"
+        android:visibility="gone"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+
+</RelativeLayout>

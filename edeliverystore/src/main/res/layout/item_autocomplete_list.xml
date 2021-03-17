@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/colorWhite"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:src="@drawable/ic_location_on_gray_24dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvPlaceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:text="@string/app_name"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/size_app_text_regular"
+            />
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvPlaceAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:text="@string/app_name"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/size_app_label_small"
+            />
+
+        <View
+            android:id="@+id/viewDiveCountry"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:background="@color/color_app_divider">
+
+        </View>
+    </LinearLayout>
+</LinearLayout>

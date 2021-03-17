@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvBankName"
+        style="@style/CustomTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_app_edit_text_padding"
+        android:paddingStart="@dimen/activity_horizontal_padding"/>
+
+</LinearLayout>

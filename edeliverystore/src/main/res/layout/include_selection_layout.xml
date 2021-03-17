@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/llSelection"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="?attr/actionBarSize"
+              android:background="@color/colorBlack"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:visibility="gone"
+              app:layout_collapseMode="pin">
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cpv_default_thickness"
+        android:padding="@dimen/cardview_default_elevation"
+        android:src="@drawable/ic_cross_white"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvSelected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorWhite"/>
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/cpv_default_thickness"
+        android:padding="@dimen/cardview_default_elevation"
+        android:src="@drawable/ic_delete_black_24dp"/>
+</LinearLayout>

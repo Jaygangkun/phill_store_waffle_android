@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivFrontDocumentImage"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_add_image"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/ivBackDocumentImage"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivBackDocumentImage"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:src="@drawable/ic_add_image"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/ivAdditionDocumentImage"
+                    app:layout_constraintStart_toEndOf="@id/ivFrontDocumentImage"
+                    app:layout_constraintTop_toTopOf="@id/ivFrontDocumentImage" />
+
+                <ImageView
+                    android:id="@+id/ivAdditionDocumentImage"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:src="@drawable/ic_add_image"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivBackDocumentImage"
+                    app:layout_constraintTop_toTopOf="@id/ivFrontDocumentImage" />
+
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvFront"
+                    style="@style/CustomTextBlack"
+                    android:textAlignment="center"
+                    android:layout_marginTop="@dimen/general_top_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_photo_id_front"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_regular"
+                    app:layout_constraintEnd_toEndOf="@id/ivFrontDocumentImage"
+                    app:layout_constraintStart_toStartOf="@id/ivFrontDocumentImage"
+                    app:layout_constraintTop_toBottomOf="@id/ivFrontDocumentImage" />
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvBack"
+                    style="@style/CustomTextBlack"
+                    android:layout_marginTop="@dimen/general_top_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_photo_id_back"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_regular"
+                    app:layout_constraintEnd_toEndOf="@id/ivBackDocumentImage"
+                    app:layout_constraintStart_toStartOf="@id/ivBackDocumentImage"
+                    app:layout_constraintTop_toBottomOf="@id/ivBackDocumentImage" />
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvAdditional"
+                    style="@style/CustomTextBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/general_top_margin"
+                    android:textAlignment="center"
+                    android:text="@string/text_photo_id_additional"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_regular"
+                    app:layout_constraintEnd_toEndOf="@id/ivAdditionDocumentImage"
+                    app:layout_constraintStart_toStartOf="@id/ivAdditionDocumentImage"
+                    app:layout_constraintTop_toBottomOf="@id/ivAdditionDocumentImage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etAccountHolderName"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+
+                    android:hint="@string/text_ac_holder_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:minLines="1"
+                    android:textAlignment="viewStart" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etBankAccountNumber"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/text_account_no"
+
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:minLines="1"
+                    android:textAlignment="viewStart" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etRoutingNumber"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/text_rout_no"
+
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:minLines="1"
+                    android:textAlignment="viewStart" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:theme="@style/CustomTextInputLayout">
+
+                <com.edelivery.store.widgets.CustomInputEditText
+                    android:id="@+id/etPersonalIdNumber"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/text_personal_id_number"
+
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:minLines="1"
+                    android:textAlignment="viewStart" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/llDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:layout_marginEnd="2dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvDob"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1dp"
+                    android:background="@null"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                    android:singleLine="true"
+                    android:text="@string/text_dob"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_regular" />
+
+                <include layout="@layout/layout_divider_horizontal" />
+
+                <RadioGroup
+                    android:id="@+id/rgGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/activity_horizontal_padding"
+                    android:paddingBottom="@dimen/activity_horizontal_padding">
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        style="@style/CustomTextBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_gender"
+                        android:textColor="@color/color_app_label"
+                        android:textSize="@dimen/size_app_label_regular" />
+
+                    <RadioButton
+                        android:id="@+id/rbMale"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/text_male"
+                        android:textSize="@dimen/size_app_text_regular" />
+
+                    <RadioButton
+                        android:id="@+id/rbFemale"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/text_female"
+                        android:textSize="@dimen/size_app_text_regular" />
+
+                </RadioGroup>
+
+                <include layout="@layout/layout_divider_horizontal" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etAddress"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/text_address"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences"
+                        android:minLines="1"
+                        android:textAlignment="viewStart" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:theme="@style/CustomTextInputLayout">
+
+                    <com.edelivery.store.widgets.CustomInputEditText
+                        android:id="@+id/etPostalCode"
+                        style="@style/CustomEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/text_postal_code"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:minLines="1"
+                        android:textAlignment="viewStart" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

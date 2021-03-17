@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+                                   xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="?attr/actionBarSize"
+                                   android:background="@android:color/transparent"
+                                   android:elevation="@dimen/dimen_app_toolbar_elevation"
+                                   android:orientation="vertical"
+                                   android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                   app:layout_collapseMode="pin"
+                                   app:titleTextColor="@color/colorWhite">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvToolbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/size_app_text_regular"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvtoolbarbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/general_medium_margin"
+        android:background="@drawable/background_tool_bar_btn"
+        android:gravity="end"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingEnd="@dimen/activity_horizontal_padding"
+        android:paddingStart="@dimen/activity_horizontal_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_order_details"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_app_label_small"
+        android:visibility="gone"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <FrameLayout
+        android:id="@+id/flCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingEnd="@dimen/dimen_app_edit_text_padding"
+        android:paddingStart="@dimen/dimen_app_edit_text_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+        <ImageView
+            android:id="@+id/ivToolbarRightIcon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvCartCount"
+            android:layout_width="@dimen/dimen_cart_count"
+            android:layout_height="@dimen/dimen_cart_count"
+            android:layout_gravity="end|top"
+            android:background="@drawable/selector_circle_red"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_app_text_cart"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+</androidx.appcompat.widget.Toolbar>

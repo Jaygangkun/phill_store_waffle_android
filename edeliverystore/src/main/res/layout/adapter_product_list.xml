@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llProductItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/activity_horizontal_padding"
+    android:paddingStart="@dimen/activity_horizontal_padding">
+
+    <LinearLayout
+        android:id="@+id/llItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/activity_horizontal_padding"
+        android:paddingTop="@dimen/activity_horizontal_padding">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvProductName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="Sandwitch"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_text_medium"
+                    android:transitionName="@string/text_transition_text1"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvProductDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+                    android:maxLines="2"
+                    android:visibility="gone"
+                    android:text="Called by a parent to request that a child update its values for mScrollX and mScrollY if necessary"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_label_small"
+                    android:transitionName="@string/text_transition_text2"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+                <LinearLayout
+                    android:id="@+id/llSpeciNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+                    android:paddingTop="@dimen/dimen_app_edit_text_padding">
+
+                    <com.edelivery.store.widgets.CustomTextView
+                        android:id="@+id/tvSpecificationNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/cardview_default_elevation"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:text="@string/text_specification"
+                        android:textColor="@color/color_app_heading"
+                        android:textSize="@dimen/size_app_text_small"
+                        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/color_app_heading"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+                android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+                android:gravity="top|center_horizontal"
+                android:orientation="vertical">
+
+                <com.edelivery.store.widgets.CustomFontTextViewTitle
+                    android:id="@+id/tvItemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/general_small_margin"
+                    android:layout_weight="1"
+                    android:textColor="@color/color_app_text"
+                    android:textSize="@dimen/size_app_label_regular"
+                    android:visibility="visible"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:theme="@style/CustomSwitch"/>
+
+                <com.edelivery.store.widgets.CustomTextView
+                    android:id="@+id/tvVisibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/general_small_margin"
+                    android:gravity="center"
+                    android:text="@string/text_item_out_stock"
+                    android:textColor="@color/color_app_label"
+                    android:textSize="@dimen/size_app_text_small"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivProduct"
+            android:layout_width="@dimen/img_size"
+            android:layout_height="@dimen/img_size"
+            android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+            android:contentDescription="@string/text_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            android:transitionName="@string/text_transition_image"
+            android:visibility="gone"
+            app:riv_corner_radius="3dp"
+            app:riv_mutate_background="true"
+            app:riv_oval="false"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/ivListDivider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_app_gray"/>
+
+    <View
+        android:id="@+id/llBlank"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/img_size"
+        android:visibility="gone"/>
+</LinearLayout>

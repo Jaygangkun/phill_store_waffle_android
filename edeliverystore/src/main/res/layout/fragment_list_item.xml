@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/color_app_bg"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:clipToPadding="false"
+        android:focusable="false">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <include layout="@layout/layout_product_fiiter"/>
+
+    <include layout="@layout/layout_add_product"/>
+
+
+</FrameLayout>
+
+
+

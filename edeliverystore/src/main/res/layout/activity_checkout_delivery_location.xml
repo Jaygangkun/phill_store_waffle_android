@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_delivery_location"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical"
+    tools:context="com.edelivery.store.CheckoutDeliveryLocationActivity">
+
+    <include
+        layout="@layout/include_toolbar">
+    </include>
+
+    <LinearLayout
+        android:id="@+id/llDeliveryAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.component.CustomFontAutoCompleteView
+            android:id="@+id/acDeliveryAddress"
+            style="@style/CustomAutoCompleteStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawablePadding="@dimen/activity_horizontal_margin"
+            android:dropDownAnchor="@id/llDeliveryAddress"
+            android:dropDownWidth="match_parent"
+            android:ems="10"
+            android:hint="@string/text_enter_delivery_address"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:padding="@dimen/activity_horizontal_margin"
+
+            android:textAlignment="viewStart"
+            app:drawableLeftCompat="@drawable/ic_location_on_gray_24dp"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/ivClearDeliveryAddressTextMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+            android:padding="@dimen/dimen_app_edit_text_padding"
+            android:visibility="visible"
+            app:srcCompat="@drawable/cross_grey_icon"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mapFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <com.edelivery.store.widgets.CustomEventMapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.edelivery.store.widgets.CustomEventMapView>
+
+
+        <LinearLayout
+            android:id="@+id/llMapPin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivMyLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_pin_delivery"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivTargetLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="@dimen/activity_horizontal_padding"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            app:srcCompat="@drawable/target_location"/>
+
+
+    </FrameLayout>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnDone"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_done"
+        android:visibility="visible"/>
+</LinearLayout>

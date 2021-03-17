@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/activity_horizontal_margin"
+              android:layout_marginRight="@dimen/activity_horizontal_margin"
+              android:layout_marginTop="@dimen/activity_horizontal_padding"
+              android:gravity="center_vertical"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/llProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_padding"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvCartProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="@string/text_no_item"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvCartProductDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_padding"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="@string/text_no_item"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_app_label"
+                android:textSize="@dimen/size_app_label_small"/>
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvCartProductPricing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="$88.8"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_item_quantity"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvRemoveCartItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+                android:padding="@dimen/dimen_app_edit_text_padding"
+                android:text="@string/text_remove"
+                android:textColor="@color/color_app_heading"
+                android:textSize="@dimen/size_app_text_small"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/viewDivProductItem"
+        layout="@layout/layout_divider_horizontal"/>
+
+</LinearLayout>

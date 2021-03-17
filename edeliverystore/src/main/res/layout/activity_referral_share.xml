@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvTagWallet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_item_section"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_wallet"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_app_label_regular"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:textSize="@dimen/size_app_label_regular"
+        android:text="@string/text_current_balance"
+        android:textColor="@color/color_app_label"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvWalletAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:text="@string/text_empty_string"
+        android:textAlignment="viewStart"
+
+        android:textSize="@dimen/size_app_text_largest"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvTagShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_item_section"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_share"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_app_label_regular"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/earn_icon"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            android:text="@string/msg_for_referral_code_share"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_label_regular"/>
+
+        <com.edelivery.store.widgets.CustomFontTextViewTitle
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/text_Referral"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_text_regular"/>
+
+        <com.edelivery.store.widgets.CustomFontTextViewTitle
+            android:id="@+id/tvReferralCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:background="@drawable/selector_suqare_shape_black"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/text_empty_string"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_large"/>
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomButton
+        android:id="@+id/btnShareReferral"
+        style="@style/CustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_share"/>
+</LinearLayout>

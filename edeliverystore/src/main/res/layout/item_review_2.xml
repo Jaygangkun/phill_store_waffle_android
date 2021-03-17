@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="@dimen/btn_height"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            android:visibility="visible"
+            app:riv_corner_radius="360dip"
+            app:riv_oval="true"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.edelivery.store.widgets.CustomFontTextViewTitle
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                android:gravity="start"
+                android:text="@string/text_empty_string"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/size_app_label_regular"/>
+
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+                android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+                android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+                android:drawablePadding="@dimen/dimen_app_edit_text_padding"
+                android:gravity="start"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_app_text"
+                android:textSize="@dimen/size_app_text_small"
+                app:drawableLeftCompat="@drawable/ic_star2_01"/>
+
+            <com.edelivery.store.widgets.CustomTextView
+                android:id="@+id/tvOrderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_padding"
+                android:gravity="start"
+                android:text="@string/text_empty_string"
+                android:textAlignment="viewStart"
+                android:textColor="@color/color_app_text"
+                android:textSize="@dimen/size_app_text_small"/>
+        </LinearLayout>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvDate"
+            style="@style/CustomTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+            android:text="@string/text_empty_string"
+            android:textAlignment="textEnd"
+            android:textColor="@color/color_app_label"
+            android:textSize="@dimen/size_app_text_small"/>
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvUserComment"
+        style="@style/CustomTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/size_app_label_regular"
+        android:textColor="@color/color_app_label"/>
+
+    <LinearLayout
+        android:id="@+id/llLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvLike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:drawablePadding="@dimen/activity_horizontal_padding"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_label_regular"
+            app:drawableLeftCompat="@drawable/ic_thumbs_up_01_unselect"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvDisLike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_app_edit_text_padding"
+            android:layout_marginStart="@dimen/activity_horizontal_padding"
+            android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+            android:drawablePadding="@dimen/activity_horizontal_padding"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_label_regular"
+            app:drawableLeftCompat="@drawable/ic_thumbs_down_01_unselect"/>
+    </LinearLayout>
+</LinearLayout>

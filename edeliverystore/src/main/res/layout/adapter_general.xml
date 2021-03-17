@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/color_app_bg"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/general_top_margin"
+        android:layout_marginTop="@dimen/general_top_margin"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/general_top_margin"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_regular"
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+        <ImageView
+            android:id="@+id/ivType"
+            android:layout_width="@dimen/type_image_size"
+            android:layout_height="@dimen/type_image_size"
+            android:src="@drawable/placeholder"
+            android:layout_marginStart="@dimen/general_top_margin"
+            android:contentDescription="@string/text_image"/>
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/general_top_margin"
+            android:textColor="@color/color_app_text"
+            android:textSize="@dimen/size_app_text_medium"
+            android:textAlignment="viewStart"
+
+            app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/include_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"/>
+
+</LinearLayout>

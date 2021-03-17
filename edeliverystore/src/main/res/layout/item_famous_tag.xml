@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_horizontal_padding"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.edelivery.store.widgets.CustomFontTextViewTitle
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_padding"
+        android:text="#"
+        android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+        android:textColor="@color/color_app_text"
+        android:textSize="@dimen/size_app_text_large"/>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvFamousTag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="Food"
+        android:textColor="@color/color_app_text"/>
+
+    <com.edelivery.store.component.CustomFontCheckBox
+        android:id="@+id/cbTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cross"/>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/dialogImageViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_collapseMode="parallax">
+    </androidx.viewpager.widget.ViewPager>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="bottom"
+        app:layout_collapseMode="parallax">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:foreground="@drawable/overly_shadow_product_item_dialog"/>
+
+        <LinearLayout
+            android:id="@+id/llDotsDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/activity_horizontal_padding"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

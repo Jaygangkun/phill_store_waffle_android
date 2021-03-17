@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:centerX="0%"
+                android:centerY="78%"
+                android:centerColor="#00ffffff"
+                android:startColor="#80ffffff"
+                android:type="sweep">
+            </gradient>
+            <size android:width="@dimen/dimen_app_profile_image" android:height="@dimen/dimen_app_profile_image"/>
+        </shape>
+    </item>
+</selector>

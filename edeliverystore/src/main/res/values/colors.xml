@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1E3142</color>
+    <color name="colorAccent">#1E3142</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="color_app_status_bar">#1E3142</color>
+    <color name="color_app_bg">#ffffff</color>
+    <color name="color_app_label">#b41a1a19</color>
+    <color name="color_app_text">#1a1a19</color>
+    <color name="color_app_button">#D18430</color>
+    <color name="color_app_floating_button">#D18430</color>
+    <color name="color_app_heading">#1E3142</color>
+    <color name="color_app_heading_trans">#1E3142</color>
+    <color name="color_app_label_white">#82ffffff</color>
+    <color name="color_app_transparent_black">#b3000000</color>
+    <color name="color_app_gray">#9E9E9E</color>
+    <color name="color_app_link">#1E3142</color>
+    <color name="color_app_divider">#D0D0D0</color>
+    <color name="color_app_rating_bar">#1E3142</color>
+    <color name="color_app_theme">#ffffffff</color>
+    <color name="color_app_transparent_white">#caf9f6f6</color>
+    <color name="color_app_gray_trans">#a9d0d0d0</color>
+    <color name="color_app_ratting">#1E3142</color>
+    <color name="color_app_wallet_bg">#deececec</color>
+    <color name="color_app_wallet_deduct">#E64143</color>
+    <color name="color_app_wallet_added">#578E12</color>
+    <color name="color_app_header_bg">#F2F2F4</color>
+    <color name="ic_launcher_background">#258A9C</color>
+
+</resources>

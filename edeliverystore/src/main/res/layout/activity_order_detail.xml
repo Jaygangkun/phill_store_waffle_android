@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_app_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/activity_order_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical"
+        tools:context="com.elluminati.edelivery.store.com.edelivery.store.OrderDetailActivity">
+
+        <include layout="@layout/adapter_order" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:src="@drawable/below_shadow" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/activity_horizontal_padding"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:focusable="false"
+            android:orientation="vertical">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/llBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/color_app_text"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.edelivery.store.widgets.CustomButton
+                android:id="@+id/btnAction"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_accept"
+                app:typefaceBtn="fonts/AvenirLTStd-Medium.otf" />
+
+            <ImageView
+                android:id="@+id/dive"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/general_top_margin"
+                android:layout_marginBottom="@dimen/general_top_margin"
+                android:background="@color/colorWhite"
+                android:contentDescription="@string/text_image" />
+
+            <com.edelivery.store.widgets.CustomButton
+                android:id="@+id/btnReject"
+                style="@style/CustomButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_reject"
+                android:visibility="visible"
+                app:typefaceBtn="fonts/AvenirLTStd-Medium.otf" />
+
+            <com.edelivery.store.widgets.CustomButton
+                android:id="@+id/ivBtnCancel"
+                style="@style/CustomButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/activity_horizontal_margin"
+                android:text="@string/text_cancel"
+                android:visibility="visible"
+                app:typefaceBtn="fonts/AvenirLTStd-Medium.otf" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

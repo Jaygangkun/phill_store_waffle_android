@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_horizontal_padding"
+    android:layout_marginTop="@dimen/activity_horizontal_padding"
+    android:orientation="horizontal">
+
+    <com.edelivery.store.widgets.CustomEditText
+        android:id="@+id/etSpecificationName"
+        style="@style/CustomEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/text_specification_name"
+        android:inputType="textCapSentences"
+        android:singleLine="true"
+        android:focusableInTouchMode="false"
+        android:textSize="@dimen/size_app_text_regular"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_app_text"/>
+
+    <com.edelivery.store.widgets.CustomEditText
+        android:id="@+id/etSpecificationPrice"
+        style="@style/CustomEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/text_specification_price"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/size_app_text_regular"
+        android:textColor="@color/color_app_text"/>
+
+</LinearLayout>
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/activity_horizontal_padding"
+    android:paddingBottom="@dimen/activity_horizontal_padding">
+
+    <LinearLayout
+        android:id="@+id/llCard"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_credit_card_big" />
+
+        <com.edelivery.store.widgets.CustomTextView
+            android:id="@+id/tvCardNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_padding"
+            android:layout_marginRight="@dimen/activity_horizontal_padding"
+            android:layout_weight="1"
+            android:textSize="@dimen/size_app_text_regular" />
+
+        <ImageView
+            android:id="@+id/ivSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_horizontal_padding"
+            android:src="@drawable/ic_checked"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/ivDeleteCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/dimen_app_edit_text_padding"
+        android:background="@drawable/background_black_btn"
+        android:gravity="end"
+        android:paddingStart="@dimen/activity_horizontal_padding"
+        android:paddingTop="@dimen/dimen_app_edit_text_padding"
+        android:paddingEnd="@dimen/activity_horizontal_padding"
+        android:paddingBottom="@dimen/dimen_app_edit_text_padding"
+        android:text="@string/text_delete"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/size_app_label_small"
+        android:visibility="visible" />
+
+
+</LinearLayout>

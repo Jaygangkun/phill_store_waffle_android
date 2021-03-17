@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    app:theme="@style/AppTheme">
+
+    <com.edelivery.store.widgets.CustomTextView
+        android:id="@+id/tvDialogDocumentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:text="@string/text_set_document_photos"
+        android:textSize="@dimen/size_app_text_large"
+        android:textAllCaps="false"
+        android:textColor="@color/color_app_text"
+        app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llDocumentInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNumberId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_padding"
+                android:visibility="visible">
+
+                <com.edelivery.store.widgets.CustomEditText
+                    android:id="@+id/etIdNumber"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:textAlignment="viewStart"
+
+                    android:hint="@string/text_document_id"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:visibility="visible"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilExpireDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_app_edit_text_padding"
+                android:visibility="visible">
+
+                <com.edelivery.store.widgets.CustomEditText
+                    android:id="@+id/etExpireDate"
+                    style="@style/CustomEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/text_description"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:textAlignment="viewStart"
+
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/text_document_expire_date"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+
+                    android:visibility="visible"
+                    app:typefaceTv="fonts/AvenirLTStd-Medium.otf"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivDialogDocumentImage"
+            android:layout_width="@dimen/bottom_margin_floatingBtn"
+            android:layout_height="@dimen/bottom_margin_floatingBtn"
+            android:layout_marginStart="@dimen/dimen_app_edit_text_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/uploading"
+            android:visibility="visible"
+            app:riv_corner_radius="@dimen/cardview_default_radius"/>
+    </LinearLayout>
+
+
+    <include layout="@layout/include_alter_btn"/>
+</LinearLayout>
+
