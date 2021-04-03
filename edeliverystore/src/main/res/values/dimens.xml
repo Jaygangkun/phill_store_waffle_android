@@ -13,16 +13,16 @@
     <dimen name="dimen_app_tab_size">36dp</dimen>
     <dimen name="splash_logo">155dp</dimen>
 
-    <integer name="dimen_print_text_larger">28</integer>
-    <integer name="dimen_print_text_regular">24</integer>
-    <integer name="dimen_print_text_medium">29</integer>
+    <integer name="dimen_print_text_larger">33</integer>
+    <integer name="dimen_print_text_regular">28</integer>
+    <integer name="dimen_print_text_medium">34</integer>
     <integer name="dimen_print_divider_size">20</integer>
     <integer name="dimen_print_divider_size1">22</integer>
-    <integer name="dimen_print_next_line">30</integer>
-    <integer name="dimen_print_text_heading">35</integer>
-    <integer name="dimen_print_text_large">36</integer>
-    <integer name="dimen_print_text_title">66</integer>
-    <integer name="dimen_print_lable_with_bg">40</integer>
+    <integer name="dimen_print_next_line">36</integer>
+    <integer name="dimen_print_text_heading">42</integer>
+    <integer name="dimen_print_text_large">43</integer>
+    <integer name="dimen_print_text_title">79</integer>
+    <integer name="dimen_print_lable_with_bg">48</integer>
     <integer name="dimen_print_qr_layout_width">230</integer>
     <integer name="dimen_print_logo_width">180</integer>
     <integer name="dimen_print_logo_height">90</integer>

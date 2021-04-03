@@ -69,6 +69,7 @@ import com.jaredrummler.android.device.DeviceName;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -292,7 +293,8 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
     }
 
     private void printData() {
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.user_yeti);
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.waffle_logo);
         AidlUtil.getInstance().printBitmap(bitmap);
 //
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
@@ -306,12 +308,17 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 
         try {
             String date;
-            if (orderDetail.getOrder().isIsScheduleOrder())
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
-            else
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            String timeStr;
+            if (orderDetail.getOrder().isIsScheduleOrder()){
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+            }
+            else{
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            }
 
-            AidlUtil.getInstance().printCenterText("Requested for" + date + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
+            AidlUtil.getInstance().printCenterText("Requested for \n" + date + "\n" + timeStr + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -321,9 +328,11 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         //AidlUtil.getInstance().printCenterText( "+ "\n", getResources().getInteger(R.integer.dimen_print_text_medium), false, false);
 
         String order_no = getResources().getString(R.string.text_order_no) + orderDetail.getOrder().getUniqueId();
-        AidlUtil.getInstance().printCenterText(order_no + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        AidlUtil.getInstance().printCenterText(order_no + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
+
+        AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
         Log.d(">", "-----------------------<");
 
@@ -345,23 +354,43 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 //            String total = PreferenceHelper.getPreferenceHelper(this).getCurrency() + item.getTotalItemAndSpecificationPrice();
 
             ti = new TableItem();
-            ti.setAlign(new int[]{0, 1, 2});
-            ti.setText(new String[]{item.getQuantity() + "x", item.getItemName(), item.getTotalPrice() + ""});
-            ti.setWidth(new int[]{1, 1, 1});
+            ti.setAlign(new int[]{0, 0, 2});
+            double rowPrice = 0;
+            if(item.getSpecifications().size() > 0){
+                rowPrice = item.getTotalItemAndSpecificationPrice();
+            }
+            else{
+                rowPrice = item.getTotalPrice();
+            }
+
+            ti.setText(new String[]{item.getQuantity() + "x", item.getItemName(), parseContent.decimalTwoDigitFormat.format(rowPrice) + ""});
+            ti.setWidth(new int[]{1, 4, 2});
             datalist.add(ti);
+
+            if(item.getSpecifications().size() > 0){
+                for (ItemSpecification itemSpecification : item.getSpecifications()) {
+                    ti = new TableItem();
+                    ti.setAlign(new int[]{0, 0, 2});
+
+                    ti.setText(new String[]{"", itemSpecification.getName(), parseContent.decimalTwoDigitFormat.format(itemSpecification.getPrice()) + ""});
+                    ti.setWidth(new int[]{1, 4, 2});
+                    datalist.add(ti);
+                }
+            }
+
         }
         AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
 
         datalist = new LinkedList<>();
         ti = new TableItem();
         ti.setAlign(new int[]{0, 2});
-        ti.setText(new String[]{"Food and Drink Total", orderDetail.getOrderPaymentDetail().getTotalCartPrice() + ""});
+        ti.setText(new String[]{"Food and Drink Total", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalCartPrice()) + ""});
         ti.setWidth(new int[]{2, 1});
         datalist.add(ti);
 
         ti = new TableItem();
         ti.setAlign(new int[]{0, 2});
-        ti.setText(new String[]{"Delivery charges", orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice() + ""});
+        ti.setText(new String[]{"Delivery charges", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice()) + ""});
         ti.setWidth(new int[]{2, 1});
         datalist.add(ti);
         AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
@@ -369,7 +398,7 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 
         ti = new TableItem();
         ti.setAlign(new int[]{0, 2});
-        ti.setText(new String[]{"Total Due", orderDetail.getOrderPaymentDetail().getTotal() + ""});
+        ti.setText(new String[]{"Total Due", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotal()) + ""});
         ti.setWidth(new int[]{2, 1});
         datalist = new LinkedList<>();
         datalist.add(ti);
@@ -392,7 +421,11 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
-        AidlUtil.getInstance().printCenterText("ORDER HAS BEEN PAID\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
+        if (orderDetail.getOrderPaymentDetail().getCardPayment() > 0) {
+            AidlUtil.getInstance().printCenterText("ORDER HAS BEEN PAID\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
+        } else if (orderDetail.getOrderPaymentDetail().getCashPayment() > 0) {
+            AidlUtil.getInstance().printCenterText("UNPAID - Cash\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
+        }
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
         AidlUtil.getInstance().printText("Customer Details:\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
@@ -404,11 +437,11 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
             String address = orderDetail.getCartDetail().getDestinationAddresses().get(0).getAddress();
             AidlUtil.getInstance().printText(address + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         }
-        String phone = (orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getCountryPhoneCode().concat(
-                orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getPhone()));
-        AidlUtil.getInstance().printText("Tel:" + phone + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+//        String phone = (orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getCountryPhoneCode().concat(
+//                orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getPhone()));
+//        AidlUtil.getInstance().printText("Tel:" + phone + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
-        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
+//        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
         AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         if (orderDetail.getOrderCount() == 1) {
             AidlUtil.getInstance().printCenterText(" New Customer" + "\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
@@ -436,11 +469,14 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         }
 
 
-        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
+//        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
         AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         AidlUtil.getInstance().printText("Thank you for your custom!", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 //        AidlUtil.getInstance().printDarkText("Dark Text", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
         AidlUtil.getInstance().print3Line();
+        AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
 
         Log.d(">", "-----------------------<");
@@ -450,22 +486,27 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 //
         AidlUtil.getInstance().printCenterText(preferenceHelper.getName() + "\n\n\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
         AidlUtil.getInstance().printCenterText(preferenceHelper.getAddress() + "\n\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
-        AidlUtil.getInstance().printCenterText("DELIVERY" + "\n\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+        AidlUtil.getInstance().printCenterText("DELIVERY" + "\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
 
         try {
             String date;
-            if (orderDetail.getOrder().isIsScheduleOrder())
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
-            else
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            String timeStr;
+            if (orderDetail.getOrder().isIsScheduleOrder()){
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+            }
+            else{
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            }
 
-            AidlUtil.getInstance().printCenterText("Date:" + date + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+            AidlUtil.getInstance().printCenterText("Requested for \n" + date + "\n" + timeStr + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         String order_no = getResources().getString(R.string.text_order_no) + orderDetail.getOrder().getUniqueId();
-        AidlUtil.getInstance().printCenterText(order_no + "\n\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        AidlUtil.getInstance().printCenterText(order_no + "\n\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
         AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
@@ -475,10 +516,10 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         String address = orderDetail.getCartDetail().getDestinationAddresses().get(0).getAddress();
         AidlUtil.getInstance().printText(address + "\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
 
-        AidlUtil.getInstance().printText("Contact customer  on:" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
-        String phone = (orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getCountryPhoneCode().concat(
-                orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getPhone()));
-        AidlUtil.getInstance().printText(phone + "\n\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
+//        AidlUtil.getInstance().printText("Contact customer  on:" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+//        String phone = (orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getCountryPhoneCode().concat(
+//                orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getPhone()));
+//        AidlUtil.getInstance().printText(phone + "\n\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
 
 
         if (!TextUtils.isEmpty(orderDetail.getCartDetail().getDestinationAddresses().get(0).getNote())) {
@@ -492,16 +533,20 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         try {
             String date;
-            if (orderDetail.getOrder().isIsScheduleOrder())
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
-            else
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            String timeStr;
+            if (orderDetail.getOrder().isIsScheduleOrder()){
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+            }
+            else{
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            }
 
-            AidlUtil.getInstance().printCenterText("Requested for" + date + "\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+            AidlUtil.getInstance().printCenterText("Requested for\n" + date + "\n" + timeStr + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
 
@@ -528,62 +573,91 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 //            String total = PreferenceHelper.getPreferenceHelper(this).getCurrency() + item.getTotalItemAndSpecificationPrice();
 
             ti = new TableItem();
-            ti.setAlign(new int[]{0, 1, 2});
-            ti.setText(new String[]{item.getQuantity() + "x", item.getItemName(), item.getTotalPrice() + ""});
-            ti.setWidth(new int[]{1, 1, 1});
+            ti.setAlign(new int[]{0, 0, 2});
+            double rowPrice = 0;
+            if(item.getSpecifications().size() > 0){
+                rowPrice = item.getTotalItemAndSpecificationPrice();
+            }
+            else{
+                rowPrice = item.getTotalPrice();
+            }
+
+            ti.setText(new String[]{item.getQuantity() + "x", item.getItemName(), parseContent.decimalTwoDigitFormat.format(rowPrice) + ""});
+            ti.setWidth(new int[]{1, 4, 2});
             datalist.add(ti);
+
+            if(item.getSpecifications().size() > 0){
+                for (ItemSpecification itemSpecification : item.getSpecifications()) {
+                    ti = new TableItem();
+                    ti.setAlign(new int[]{0, 0, 2});
+
+                    ti.setText(new String[]{"", itemSpecification.getName(), parseContent.decimalTwoDigitFormat.format(itemSpecification.getPrice()) + ""});
+                    ti.setWidth(new int[]{1, 4, 2});
+                    datalist.add(ti);
+                }
+            }
+
         }
         AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
-        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
+//        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
 
         datalist = new LinkedList<>();
         ti = new TableItem();
         ti.setAlign(new int[]{0, 2});
-        ti.setText(new String[]{"Delivery charges", orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice() + ""});
+        ti.setText(new String[]{"Delivery charges", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice()) + ""});
         ti.setWidth(new int[]{2, 1});
         datalist.add(ti);
         AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
-        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
+//        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
-        AidlUtil.getInstance().printCenterText("Total = " + orderDetail.getOrderPaymentDetail().getTotal(), getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+        AidlUtil.getInstance().printCenterText("Total = " + parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotal()), getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
         AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
+        // print comments
 
         if (orderDetail.getOrderPaymentDetail().isIsPaymentPaid()) {
-            AidlUtil.getInstance().printCenterText("PAID" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+            AidlUtil.getInstance().printCenterText("UNPAID - Cash" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
         } else if (orderDetail.getOrderPaymentDetail().getCashPayment() > 0) {
-            AidlUtil.getInstance().printCenterText("UNPAID" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+            AidlUtil.getInstance().printCenterText("Unpaid - Cash" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
         }
 
         if (orderDetail.getOrderPaymentDetail().getCardPayment() > 0) {
             Log.d("Pay by card", orderDetail.getOrderPaymentDetail().isIsPaymentModeCash() + "");
-            AidlUtil.getInstance().printText("Payment method: Card" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+//            AidlUtil.getInstance().printText("Payment method: Card" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         } else if (orderDetail.getOrderPaymentDetail().getCashPayment() > 0) {
             Log.d("Pay by Cash", orderDetail.getOrderPaymentDetail().getCashPayment() + "");
-            AidlUtil.getInstance().printText("Payment method: Cash" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+//            AidlUtil.getInstance().printText("Payment method: Cash" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
         }
 
         try {
             String date;
-            if (orderDetail.getOrder().isIsScheduleOrder())
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
-            else
-                date = parseContent.dateTimeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            String timeStr;
+            if (orderDetail.getOrder().isIsScheduleOrder()){
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getScheduleOrderStartAt()));
+            }
+            else {
+                date = parseContent.dateFormat.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+                timeStr = parseContent.timeFormat_am.format(parseContent.webFormat.parse(orderDetail.getOrder().getCreatedAt()));
+            }
 
-            AidlUtil.getInstance().printText("Due:" + date + "\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+
+            AidlUtil.getInstance().printCenterText("" + date + "\n" + timeStr + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
+//        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
         AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         AidlUtil.getInstance().printText("Thank you for your custom!", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        AidlUtil.getInstance().print3Line();
         AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
-
+        AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        AidlUtil.getInstance().printText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
         Log.d(">", "-----------------------<");
     }

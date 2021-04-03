@@ -103,9 +103,12 @@ public class Constant {
     public static final String END_DATE = "end_date";
     public static final String DATE_TIME_FORMAT_WEB = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static final String TIME_FORMAT_AM = "h:mm a";
-    public static final String DATE_FORMAT = "yyyy-MM-dd";
-    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm";
-    public static final String DATE_TIME_FORMAT_AM = "yyyy-MM-dd h:mm a";
+//    public static final String DATE_FORMAT = "yyyy-MM-dd";
+//    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm";
+//    public static final String DATE_TIME_FORMAT_AM = "yyyy-MM-dd h:mm a";
+    public static final String DATE_FORMAT = "dd/MM/yyyy";
+    public static final String DATE_TIME_FORMAT = "dd/MM/yyyy HH:mm";
+    public static final String DATE_TIME_FORMAT_AM = "dd/MM/yyyy h:mm a";
     public static final String DAY = "d";
     public static final String DATE_FORMAT_2 = "MM-dd-yyyy";
     public static final String DATE_FORMAT_MONTH = "MMM yyyy";
