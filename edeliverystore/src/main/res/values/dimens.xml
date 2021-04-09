@@ -15,6 +15,7 @@
 
     <integer name="dimen_print_text_larger">33</integer>
     <integer name="dimen_print_text_regular">28</integer>
+    <integer name="dimen_print_text_small">25</integer>
     <integer name="dimen_print_text_medium">34</integer>
     <integer name="dimen_print_divider_size">20</integer>
     <integer name="dimen_print_divider_size1">22</integer>

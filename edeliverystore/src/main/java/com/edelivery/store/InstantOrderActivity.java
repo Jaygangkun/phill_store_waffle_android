@@ -15,22 +15,26 @@ import com.edelivery.store.component.VehicleDialog;
 import com.edelivery.store.models.datamodel.Addresses;
 import com.edelivery.store.models.datamodel.CartOrder;
 import com.edelivery.store.models.datamodel.CartProducts;
+import com.edelivery.store.models.datamodel.StoreData;
 import com.edelivery.store.models.datamodel.UserDetail;
 import com.edelivery.store.models.datamodel.VehicleDetail;
 import com.edelivery.store.models.responsemodel.AddCartResponse;
 import com.edelivery.store.models.responsemodel.InvoiceResponse;
+import com.edelivery.store.models.responsemodel.StoreDataResponse;
 import com.edelivery.store.models.responsemodel.VehiclesResponse;
 import com.edelivery.store.models.singleton.CurrentBooking;
 import com.edelivery.store.parse.ApiClient;
 import com.edelivery.store.parse.ApiInterface;
 import com.edelivery.store.parse.ParseContent;
 import com.edelivery.store.utils.Constant;
+import com.edelivery.store.utils.PreferenceHelper;
 import com.edelivery.store.utils.Utilities;
 import com.edelivery.store.widgets.CustomButton;
 import com.edelivery.store.widgets.CustomFontTextViewTitle;
 import com.edelivery.store.widgets.CustomInputEditText;
 import com.edelivery.store.widgets.CustomTextView;
 import com.elluminati.edelivery.store.R;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,6 +44,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import androidx.appcompat.widget.Toolbar;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,6 +61,8 @@ public class InstantOrderActivity extends BaseActivity {
     private ImageView ivDeliveryLocation, ivFreeShipping;
     private List<VehicleDetail> vehicleDetails = new ArrayList<>();
     private String vehicleId;
+
+    private StoreData storeData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +101,8 @@ public class InstantOrderActivity extends BaseActivity {
         setContactNoLength(preferenceHelper.getMaxPhoneNumberLength());
         etCustomerCountryCode.setText(preferenceHelper.getCountryPhoneCode());
         getDeliveryVehicleList();
+
+        getSettingsData();
     }
 
     @Override
@@ -264,10 +273,10 @@ public class InstantOrderActivity extends BaseActivity {
         // do somethings
         switch (view.getId()) {
             case R.id.btnInvoice:
-                if (isValidate()) {
+//                if (isValidate()) {
                     openVehicleSelectDialog();
 
-                }
+//                }
                 break;
             case R.id.ivDeliveryLocation:
             case R.id.etCustomerDeliveryAddress:
@@ -502,5 +511,52 @@ public class InstantOrderActivity extends BaseActivity {
             vehicleDialog.show();
             vehicleDialog.hideProviderManualAssign();
         }
+    }
+
+    /**
+     * this method call webservice for get setting detail
+     */
+    protected void getSettingsData() {
+        Utilities.showProgressDialog(this);
+        HashMap<String, RequestBody> map = new HashMap<>();
+        map.put(Constant.STORE_ID, ApiClient.makeTextRequestBody(
+                PreferenceHelper.getPreferenceHelper(this).getStoreId()));
+        map.put(Constant.SERVER_TOKEN, ApiClient.makeTextRequestBody(PreferenceHelper
+                .getPreferenceHelper(this).getServerToken()));
+        Call<StoreDataResponse> call = ApiClient.getClient().create(ApiInterface.class)
+                .getStoreDate(map);
+
+        call.enqueue(new Callback<StoreDataResponse>() {
+            @Override
+            public void onResponse(Call<StoreDataResponse> call, Response<StoreDataResponse>
+                    response) {
+                Utilities.removeProgressDialog();
+                Utilities.printLog("getSettingsData", new Gson().toJson(response.body()));
+                if (response.isSuccessful()) {
+                    if (response.body().isSuccess()) {
+                        storeData = response.body().getStoreDetail();
+                        etCustomerDeliveryAddress.setText(storeData.getAddress());
+                        preferenceHelper.putIsStoreCanCreateGroup(storeData.
+                                getDeliveryDetails().isStoreCanCreateGroup());
+                    } else {
+                        ParseContent.getParseContentInstance().showErrorMessage(InstantOrderActivity
+                                .this, response.body().getErrorCode(), true);
+                    }
+                } else {
+                    Utilities.showHttpErrorToast(response.code(), InstantOrderActivity.this);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<StoreDataResponse> call, Throwable t) {
+                Utilities.printLog("BaseActivity", t.getMessage());
+            }
+        });
+
+        etDeliveryPrice.setText("0");
+        etCustomerFistName.setText("instant");
+        etCustomerLastName.setText("order");
+        etCustomerMobile.setText("00000000000");
+        etCustomerEmail.setText("instant@yetidelivery.co.uk");
     }
 }

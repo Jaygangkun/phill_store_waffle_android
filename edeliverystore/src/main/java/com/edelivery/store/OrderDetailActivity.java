@@ -33,6 +33,7 @@ import com.edelivery.store.component.CustomAlterDialog;
 import com.edelivery.store.component.CustomEditTextDialog;
 import com.edelivery.store.component.NearestProviderDialog;
 import com.edelivery.store.component.VehicleDialog;
+import com.edelivery.store.models.datamodel.Addresses;
 import com.edelivery.store.models.datamodel.DateTime;
 import com.edelivery.store.models.datamodel.Item;
 import com.edelivery.store.models.datamodel.ItemSpecification;
@@ -40,10 +41,12 @@ import com.edelivery.store.models.datamodel.Order;
 import com.edelivery.store.models.datamodel.OrderDetail;
 import com.edelivery.store.models.datamodel.OrderDetails;
 import com.edelivery.store.models.datamodel.ProductSpecification;
+import com.edelivery.store.models.datamodel.StoreData;
 import com.edelivery.store.models.datamodel.VehicleDetail;
 import com.edelivery.store.models.responsemodel.IsSuccessResponse;
 import com.edelivery.store.models.responsemodel.OrderDetailResponse;
 import com.edelivery.store.models.responsemodel.OrderStatusResponse;
+import com.edelivery.store.models.responsemodel.StoreDataResponse;
 import com.edelivery.store.models.singleton.CurrentBooking;
 import com.edelivery.store.models.singleton.UpdateOrder;
 import com.edelivery.store.parse.ApiClient;
@@ -353,6 +356,7 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 //            String price = PreferenceHelper.getPreferenceHelper(this).getCurrency() + (item.getItemPrice() + item.getTotalSpecificationPrice());
 //            String total = PreferenceHelper.getPreferenceHelper(this).getCurrency() + item.getTotalItemAndSpecificationPrice();
 
+            datalist = new LinkedList<>();
             ti = new TableItem();
             ti.setAlign(new int[]{0, 0, 2});
             double rowPrice = 0;
@@ -364,36 +368,70 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
             }
 
             ti.setText(new String[]{item.getQuantity() + "x", item.getItemName(), parseContent.decimalTwoDigitFormat.format(rowPrice) + ""});
-            ti.setWidth(new int[]{1, 4, 2});
+            ti.setWidth(new int[]{1, 5, 2});
             datalist.add(ti);
+            AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
 
             if(item.getSpecifications().size() > 0){
                 for (ItemSpecification itemSpecification : item.getSpecifications()) {
+                    datalist = new LinkedList<>();
                     ti = new TableItem();
                     ti.setAlign(new int[]{0, 0, 2});
-
                     ti.setText(new String[]{"", itemSpecification.getName(), parseContent.decimalTwoDigitFormat.format(itemSpecification.getPrice()) + ""});
-                    ti.setWidth(new int[]{1, 4, 2});
+                    ti.setWidth(new int[]{1, 5, 2});
                     datalist.add(ti);
+                    AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
+
+                    if(itemSpecification.getList().size() > 0){
+
+                        for(ProductSpecification productSpecification : itemSpecification.getList()){
+                            datalist = new LinkedList<>();
+                            ti = new TableItem();
+                            ti.setAlign(new int[]{0, 0, 2});
+                            ti.setText(new String[]{"", productSpecification.getName(), ""});
+                            ti.setWidth(new int[]{1, 5, 2});
+                            datalist.add(ti);
+                            AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
+                        }
+                    }
                 }
             }
 
+            if(!item.getNoteForItem().isEmpty()){
+                datalist = new LinkedList<>();
+                ti = new TableItem();
+                ti.setAlign(new int[]{0, 0, 2});
+
+                ti.setText(new String[]{"", "Special notes:", ""});
+                ti.setWidth(new int[]{1, 5, 2});
+                datalist.add(ti);
+                AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), true);
+
+                datalist = new LinkedList<>();
+                ti = new TableItem();
+                ti.setAlign(new int[]{0, 0, 2});
+
+                ti.setText(new String[]{"", item.getNoteForItem(), ""});
+                ti.setWidth(new int[]{1, 5, 2});
+                datalist.add(ti);
+                AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), true);
+            }
         }
-        AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
+//        AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
 
         datalist = new LinkedList<>();
         ti = new TableItem();
-        ti.setAlign(new int[]{0, 2});
-        ti.setText(new String[]{"Food and Drink Total", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalCartPrice()) + ""});
-        ti.setWidth(new int[]{2, 1});
+        ti.setAlign(new int[]{0, 0, 2});
+        ti.setText(new String[]{"", "Food and Drink Total", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalCartPrice()) + ""});
+        ti.setWidth(new int[]{1, 5, 2});
         datalist.add(ti);
 
         ti = new TableItem();
-        ti.setAlign(new int[]{0, 2});
-        ti.setText(new String[]{"Delivery charges", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice()) + ""});
-        ti.setWidth(new int[]{2, 1});
+        ti.setAlign(new int[]{0, 0, 2});
+        ti.setText(new String[]{"", "Delivery charges", parseContent.decimalTwoDigitFormat.format(orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice()) + ""});
+        ti.setWidth(new int[]{1, 5, 2});
         datalist.add(ti);
-        AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
+        AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
 
 
         ti = new TableItem();
@@ -409,14 +447,24 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 //        Log.d("-", "Delivery charges =" + orderDetail.getOrderPaymentDetail().getTotalDeliveryPrice());
 //        Log.d("-", "Total Due=" + orderDetail.getOrderPaymentDetail().getUserPayPayment());
 //
-        AidlUtil.getInstance().printText("Payment By:" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+//        AidlUtil.getInstance().printText("Payment By:", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         if (orderDetail.getOrderPaymentDetail().getCardPayment() > 0) {
             Log.d("Pay by Card", orderDetail.getOrderPaymentDetail().isIsPaymentModeCash() + "");
-            AidlUtil.getInstance().printText("Card" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+            AidlUtil.getInstance().printText("Payment By: Card" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         } else if (orderDetail.getOrderPaymentDetail().getCashPayment() > 0) {
             Log.d("Pay by Cash", orderDetail.getOrderPaymentDetail().getCashPayment() + "");
 
-            AidlUtil.getInstance().printText("Cash" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+            AidlUtil.getInstance().printText("Payment By: Cash" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        }
+
+//        add delivery note
+        if(orderDetail.getCartDetail().getDestinationAddresses().size() > 0){
+            for (Addresses addresses : orderDetail.getCartDetail().getDestinationAddresses()) {
+                if(!addresses.getNote().isEmpty()){
+                    AidlUtil.getInstance().printText("Delivery Note:\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
+                    AidlUtil.getInstance().printText(addresses.getNote() + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+                }
+            }
         }
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
@@ -509,7 +557,7 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         AidlUtil.getInstance().printCenterText(order_no + "\n\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
-        AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+//        AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         AidlUtil.getInstance().printText(orderDetail.getCartDetail().getDestinationAddresses().get(0)
                 .getUserDetails().getName() + "\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
 
@@ -523,9 +571,9 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 
 
         if (!TextUtils.isEmpty(orderDetail.getCartDetail().getDestinationAddresses().get(0).getNote())) {
-            AidlUtil.getInstance().printText("Comments:" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
+            AidlUtil.getInstance().printText("Delivery Note:" + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
             String comment = orderDetail.getCartDetail().getDestinationAddresses().get(0).getNote();
-            AidlUtil.getInstance().printText(comment + "\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+            AidlUtil.getInstance().printText(comment + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
         }
 
 
@@ -571,7 +619,7 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 
 //            String price = PreferenceHelper.getPreferenceHelper(this).getCurrency() + (item.getItemPrice() + item.getTotalSpecificationPrice());
 //            String total = PreferenceHelper.getPreferenceHelper(this).getCurrency() + item.getTotalItemAndSpecificationPrice();
-
+            datalist = new LinkedList<>();
             ti = new TableItem();
             ti.setAlign(new int[]{0, 0, 2});
             double rowPrice = 0;
@@ -583,22 +631,57 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
             }
 
             ti.setText(new String[]{item.getQuantity() + "x", item.getItemName(), parseContent.decimalTwoDigitFormat.format(rowPrice) + ""});
-            ti.setWidth(new int[]{1, 4, 2});
+            ti.setWidth(new int[]{1, 5, 2});
             datalist.add(ti);
+
+            AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
 
             if(item.getSpecifications().size() > 0){
                 for (ItemSpecification itemSpecification : item.getSpecifications()) {
+                    datalist = new LinkedList<>();
                     ti = new TableItem();
                     ti.setAlign(new int[]{0, 0, 2});
-
                     ti.setText(new String[]{"", itemSpecification.getName(), parseContent.decimalTwoDigitFormat.format(itemSpecification.getPrice()) + ""});
-                    ti.setWidth(new int[]{1, 4, 2});
+                    ti.setWidth(new int[]{1, 5, 2});
                     datalist.add(ti);
+                    AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
+
+                    if(itemSpecification.getList().size() > 0){
+                        for(ProductSpecification productSpecification : itemSpecification.getList()){
+                            datalist = new LinkedList<>();
+                            ti = new TableItem();
+                            ti.setAlign(new int[]{0, 0, 2});
+                            ti.setText(new String[]{"", productSpecification.getName(), ""});
+                            ti.setWidth(new int[]{1, 5, 2});
+                            datalist.add(ti);
+                            AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
+                        }
+                    }
                 }
             }
 
+            if(!item.getNoteForItem().isEmpty()){
+                datalist = new LinkedList<>();
+                ti = new TableItem();
+                ti.setAlign(new int[]{0, 0, 2});
+
+                ti.setText(new String[]{"", "Special notes:", ""});
+                ti.setWidth(new int[]{1, 5, 2});
+                datalist.add(ti);
+                AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), true);
+
+                datalist = new LinkedList<>();
+                ti = new TableItem();
+                ti.setAlign(new int[]{0, 0, 2});
+
+                ti.setText(new String[]{"", item.getNoteForItem(), ""});
+                ti.setWidth(new int[]{1, 5, 2});
+                datalist.add(ti);
+                AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), true);
+            }
+
         }
-        AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_regular), false);
+//        AidlUtil.getInstance().printTable(datalist, getResources().getInteger(R.integer.dimen_print_text_small), false);
 //        AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
@@ -617,11 +700,20 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
         // print comments
+        if(orderDetail.getCartDetail().getDestinationAddresses().size() > 0){
+            for (Addresses addresses : orderDetail.getCartDetail().getDestinationAddresses()) {
+                if(!addresses.getNote().isEmpty()){
+                    AidlUtil.getInstance().printText("Delivery Note:\n", getResources().getInteger(R.integer.dimen_print_text_regular), true, false);
+                    AidlUtil.getInstance().printText(addresses.getNote() + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+                    AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+                }
+            }
+        }
 
         if (orderDetail.getOrderPaymentDetail().isIsPaymentPaid()) {
-            AidlUtil.getInstance().printCenterText("UNPAID - Cash" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+            AidlUtil.getInstance().printCenterText("UNPAID - Cash" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
         } else if (orderDetail.getOrderPaymentDetail().getCashPayment() > 0) {
-            AidlUtil.getInstance().printCenterText("Unpaid - Cash" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
+            AidlUtil.getInstance().printCenterText("Unpaid - Cash" + "\n\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
         }
 
         if (orderDetail.getOrderPaymentDetail().getCardPayment() > 0) {

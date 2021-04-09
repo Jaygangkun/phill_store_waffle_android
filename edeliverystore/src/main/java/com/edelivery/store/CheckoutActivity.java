@@ -19,21 +19,27 @@ import com.edelivery.store.models.datamodel.Addresses;
 import com.edelivery.store.models.datamodel.CartOrder;
 import com.edelivery.store.models.datamodel.CartProductItems;
 import com.edelivery.store.models.datamodel.CartProducts;
+import com.edelivery.store.models.datamodel.StoreData;
 import com.edelivery.store.models.datamodel.UserDetail;
 import com.edelivery.store.models.responsemodel.AddCartResponse;
+import com.edelivery.store.models.responsemodel.StoreDataResponse;
 import com.edelivery.store.models.singleton.CurrentBooking;
 import com.edelivery.store.parse.ApiClient;
 import com.edelivery.store.parse.ApiInterface;
 import com.edelivery.store.parse.ParseContent;
 import com.edelivery.store.utils.Constant;
+import com.edelivery.store.utils.PreferenceHelper;
 import com.edelivery.store.utils.Utilities;
 import com.edelivery.store.widgets.CustomButton;
 import com.edelivery.store.widgets.CustomInputEditText;
 import com.edelivery.store.widgets.CustomTextView;
 import com.elluminati.edelivery.store.R;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -99,6 +105,7 @@ public class CheckoutActivity extends BaseActivity {
         etCustomerCountryCode.setText(preferenceHelper.getCountryPhoneCode());
         llSelfDelivery.setVisibility(preferenceHelper.getIsProvidePickupDelivery() ? View
                 .VISIBLE : View.GONE);
+
     }
 
     private void setContactNoLength(int length) {
@@ -191,7 +198,8 @@ public class CheckoutActivity extends BaseActivity {
                     .text_digits);
             etCustomerMobile.setError(msg);
             etCustomerMobile.requestFocus();
-        } else if (!cbSelfDelivery.isChecked() && (TextUtils.isEmpty(etCustomerDeliveryAddress
+        }
+        else if (!cbSelfDelivery.isChecked() && (TextUtils.isEmpty(etCustomerDeliveryAddress
                 .getText()
                 .toString().trim()) ||
                 CurrentBooking.getInstance().getDeliveryLatLng() == null)) {
@@ -336,4 +344,5 @@ public class CheckoutActivity extends BaseActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
+
 }
