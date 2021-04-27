@@ -37,4 +37,5 @@
     <dimen name="dimen_app_tab_elevation">4dp</dimen>
     <dimen name="dimen_app_toolbar_elevation">6dp</dimen>
 
+    <dimen name="new_instant_bottom_margin">80dp</dimen>
 </resources>

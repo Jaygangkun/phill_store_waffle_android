@@ -36,6 +36,18 @@
                 android:src="@drawable/ic_plus"
                 app:backgroundTint="@color/color_app_floating_button"
                 app:layout_behavior=""/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingBtnInstantOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="@dimen/general_top_margin"
+                android:layout_marginBottom="@dimen/new_instant_bottom_margin"
+                android:clickable="true"
+                android:src="@drawable/ic_plus"
+                app:backgroundTint="@color/color_app_divider"
+                app:layout_behavior="" />
         </FrameLayout>
 
 

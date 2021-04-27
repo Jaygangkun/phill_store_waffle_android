@@ -17,6 +17,7 @@ import com.edelivery.store.fragment.ItemListFragment;
 import com.edelivery.store.fragment.OrderListFragment;
 import com.edelivery.store.fragment.ProfileFragment;
 import com.edelivery.store.models.datamodel.SubStore;
+import com.edelivery.store.models.responsemodel.InvoiceResponse;
 import com.edelivery.store.models.responsemodel.IsSuccessResponse;
 import com.edelivery.store.models.responsemodel.OTPResponse;
 import com.edelivery.store.models.responsemodel.StoreDataResponse;
@@ -73,6 +74,8 @@ public class HomeActivity extends BaseActivity {
     private boolean isScheduledStart;
     private Handler handler;
 
+    public FloatingActionButton floatingBtnInstantOrder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +92,11 @@ public class HomeActivity extends BaseActivity {
         floatingBtn = (FloatingActionButton) findViewById(R.id.floatingBtn);
         floatingBtn.setOnClickListener(this);
         floatingBtn.setVisibility(View.GONE);
+
+        floatingBtnInstantOrder = (FloatingActionButton) findViewById(R.id.floatingBtnInstantOrder);
+        floatingBtnInstantOrder.setOnClickListener(this);
+        floatingBtnInstantOrder.setVisibility(View.GONE);
+
         initBottomBar();
         initHandler();
         getStoreDetails();
@@ -489,6 +497,47 @@ public class HomeActivity extends BaseActivity {
                 goToStoreOrderProductActivity();
             }
         }
+        if (v.getId() == R.id.floatingBtnInstantOrder) {
+//            Utilities.showProgressDialog(this);
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put(Constant.SERVER_TOKEN, preferenceHelper
+                        .getServerToken());
+                jsonObject.put(Constant.STORE_ID, preferenceHelper.getStoreId());
+            } catch (JSONException e) {
+                Utilities.handleThrowable("CHECKOUT_ACTIVITY", e);
+            }
+
+            ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+            Call<IsSuccessResponse> responseCall = apiInterface.createInstantOrder(ApiClient
+                    .makeJSONRequestBody(jsonObject));
+
+            responseCall.enqueue(new Callback<IsSuccessResponse>() {
+                @Override
+                public void onResponse(Call<IsSuccessResponse> call, Response<IsSuccessResponse>
+                        response) {
+                    Utilities.removeProgressDialog();
+                    if (parseContent.isSuccessful(response)) {
+//                        Utilities.hideCustomProgressDialog();
+                        Message message = handler.obtainMessage();
+                        handler.sendMessage(message);
+                        if (response.body().isSuccess()) {
+                            Utilities.printLog("HOME_ACTIVITY", ApiClient.JSONResponse(response
+                                    .body()));
+                            Utilities.showToast(HomeActivity.this, "Instant Order Placed");
+                        } else {
+                            parseContent.showErrorMessage(HomeActivity
+                                    .this, response.body().getErrorCode(), false);
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<IsSuccessResponse> call, Throwable t) {
+                    Utilities.handleThrowable("HOME_ACTIVITY", t);
+                }
+            });
+        }
     }
 
     @Override
@@ -588,6 +637,8 @@ public class HomeActivity extends BaseActivity {
             tvToolbarTitle.setText(getString(R.string.text_orders));
             floatingBtn.setVisibility(preferenceHelper.getIsStoreCreateOrder() ? View.VISIBLE : View
                     .GONE);
+            floatingBtnInstantOrder.setVisibility(preferenceHelper.getIsStoreCreateOrder() ? View.VISIBLE : View
+                    .GONE);
         }
     }
 
@@ -606,6 +657,7 @@ public class HomeActivity extends BaseActivity {
             setToolbarEditIcon(true, R.drawable.filter_store);
             tvToolbarTitle.setText(getString(R.string.text_items));
             floatingBtn.setVisibility(View.GONE);
+            floatingBtnInstantOrder.setVisibility(View.GONE);
         }
     }
 
@@ -623,6 +675,7 @@ public class HomeActivity extends BaseActivity {
             setToolbarEditIcon(false, 0);
             tvToolbarTitle.setText(getString(R.string.text_deliveries));
             floatingBtn.setVisibility(View.GONE);
+            floatingBtnInstantOrder.setVisibility(View.GONE);
         }
     }
 
@@ -638,6 +691,7 @@ public class HomeActivity extends BaseActivity {
         setToolbarEditIcon(false, 0);
         tvToolbarTitle.setText(getString(R.string.text_account));
         floatingBtn.setVisibility(View.GONE);
+        floatingBtnInstantOrder.setVisibility(View.GONE);
     }
 
     public void startSchedule() {

@@ -536,4 +536,7 @@ public interface ApiInterface {
     @GET
     Call<ResponseBody> getAddressDataFromId(@Url String url, @QueryMap Map<String, String> stringMap);
 
+    @Headers("Content-Type:application/json;charset=UTF-8")
+    @POST("api/user/create_instant_order")
+    Call<IsSuccessResponse> createInstantOrder(@Body RequestBody requestBody);
 }
