@@ -42,6 +42,7 @@ import com.edelivery.store.models.datamodel.OrderDetail;
 import com.edelivery.store.models.datamodel.OrderDetails;
 import com.edelivery.store.models.datamodel.ProductSpecification;
 import com.edelivery.store.models.datamodel.StoreData;
+import com.edelivery.store.models.datamodel.UserDetail;
 import com.edelivery.store.models.datamodel.VehicleDetail;
 import com.edelivery.store.models.responsemodel.IsSuccessResponse;
 import com.edelivery.store.models.responsemodel.OrderDetailResponse;
@@ -477,11 +478,9 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), false, false);
         AidlUtil.getInstance().printCenterText("\n", getResources().getInteger(R.integer.dimen_print_text_medium), true, false);
         AidlUtil.getInstance().printText("Customer Details:\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
-        String phone = (orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getCountryPhoneCode().concat(
-        orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getPhone()));
-        AidlUtil.getInstance().printText(orderDetail.getCartDetail().getDestinationAddresses().get(0)
-                .getUserDetails().getFirstName() + " " + orderDetail.getCartDetail().getDestinationAddresses().get(0)
-                .getUserDetails().getLastName() +  ", " + phone + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+
+        UserDetail userData = orderDetail.getOrder().getUserDetail();
+        AidlUtil.getInstance().printText(userData.getName() +  "\n" + userData.getPhone() + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
 
         if (!orderDetail.getOrderPaymentDetail().isUserPickUpOrder()) {
@@ -561,11 +560,8 @@ public class OrderDetailActivity extends BaseActivity implements BaseActivity.Or
 
         AidlUtil.getInstance().printDivider(getResources().getInteger(R.integer.dimen_print_divider_size), true, false);
 //        AidlUtil.getInstance().printCenterText("\n\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
-        String phone = (orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getCountryPhoneCode().concat(
-                orderDetail.getCartDetail().getDestinationAddresses().get(0).getUserDetails().getPhone()));
-        AidlUtil.getInstance().printText(orderDetail.getCartDetail().getDestinationAddresses().get(0)
-                .getUserDetails().getFirstName() + " " + orderDetail.getCartDetail().getDestinationAddresses().get(0)
-                .getUserDetails().getLastName() +  ", " + phone + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
+        UserDetail userData = orderDetail.getOrder().getUserDetail();
+        AidlUtil.getInstance().printText(userData.getName() +  "\n" + userData.getPhone() + "\n", getResources().getInteger(R.integer.dimen_print_text_regular), false, false);
 
 //        AidlUtil.getInstance().printText(orderDetail.getCartDetail().getDestinationAddresses().get(0)
 //                .getUserDetails().getName() + "\n", getResources().getInteger(R.integer.dimen_print_text_heading), true, false);
