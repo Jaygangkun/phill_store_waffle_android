@@ -63,7 +63,6 @@
             android:hint="@string/text_username"
             android:inputType="textEmailAddress"
 
-            android:text="waffleawayexmouth@yetidelivery.co.uk"
             android:textAlignment="viewStart"
             app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf" />
 
@@ -85,7 +84,6 @@
             android:hint="@string/text_password"
             android:inputType="textPassword"
 
-            android:text="W4Ffl3"
             android:textAlignment="viewStart"
             app:typefaceInputEt="fonts/AvenirLTStd-Medium.otf" />
 
